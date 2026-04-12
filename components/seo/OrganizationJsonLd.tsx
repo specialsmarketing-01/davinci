@@ -13,7 +13,7 @@ export function OrganizationJsonLd() {
     email: contact.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: contact.address,
+      streetAddress: contact.addressLines[1],
       addressLocality: "Dubai",
       addressCountry: "AE",
     },

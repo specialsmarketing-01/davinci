@@ -10,11 +10,17 @@ export const seoKeywords = [
   "Apartments for Sale Dubai",
 ] as const;
 
+/** Office postal block — line 1: company name, line 2: full street / area (use everywhere the office address appears). */
+export const officeAddressLines = [
+  "Davinci Properties",
+  "G06-17 - G0, The Exchange Tower - الخليج التجاري - دبي - United Arab Emirates",
+] as const;
+
 export const contact = {
   phone: "+971 52 772 9114",
   phoneHref: "tel:+971527729114",
   email: "info@davinci-properties.com",
   emailHref: "mailto:info@davinci-properties.com",
-  address: "Office 2704/2, Prime Tower, Business Bay, Dubai, UAE",
+  addressLines: officeAddressLines,
   whatsappHref: "https://wa.me/971527729114",
 };

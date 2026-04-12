@@ -69,7 +69,11 @@ export function Footer() {
           </nav>
           <address className="not-italic">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Contact</p>
-            <p className="mt-4 text-sm leading-relaxed text-zinc-300">{contact.address}</p>
+            <div className="mt-4 space-y-1.5 text-sm leading-relaxed text-zinc-300">
+              {contact.addressLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
             <p className="mt-3">
               <a className="text-sm text-accent hover:underline" href={contact.phoneHref}>
                 {contact.phone}

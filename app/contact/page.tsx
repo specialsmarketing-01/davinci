@@ -27,7 +27,11 @@ export default function ContactPage() {
         <aside className="space-y-6">
           <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">Office</h2>
           <address className="not-italic text-muted">
-            <p>{contact.address}</p>
+            <div className="space-y-2">
+              {contact.addressLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
             <p className="mt-4">
               <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-foreground">
                 Phone
