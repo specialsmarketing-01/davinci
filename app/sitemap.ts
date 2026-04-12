@@ -18,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/v1ter-residence-for-sale-in-jumeirah-village-circle-jvc-dubai/",
     "/services/",
     "/about-davinci/",
-    "/about-davinci/careers/",
     "/contact/",
     "/privacy-policy/",
     "/terms-and-conditions/",

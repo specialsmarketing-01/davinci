@@ -5,7 +5,6 @@ import Link from "next/link";
 const useful = [
   { label: "About Davinci", href: "/about-davinci/" },
   { label: "Services", href: "/services/" },
-  { label: "Careers", href: "/about-davinci/careers/" },
   { label: "Privacy Policy", href: "/privacy-policy/" },
   { label: "Terms & Conditions", href: "/terms-and-conditions/" },
 ] as const;

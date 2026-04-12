@@ -22,7 +22,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/about", destination: "/about-davinci/", permanent: true },
-      { source: "/careers", destination: "/about-davinci/careers/", permanent: true },
       { source: "/terms", destination: "/terms-and-conditions/", permanent: true },
       { source: "/our-properties/buy", destination: "/our-properties/", permanent: true },
       { source: "/our-properties/rent", destination: "/rent/", permanent: true },

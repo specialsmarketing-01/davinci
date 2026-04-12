@@ -64,7 +64,6 @@ export function ContactForm() {
           <option value="sell">Selling</option>
           <option value="rent">Renting</option>
           <option value="invest">Investment advisory</option>
-          <option value="other">Something else</option>
         </select>
       </div>
       <div>

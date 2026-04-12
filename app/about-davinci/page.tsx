@@ -46,13 +46,6 @@ export default function AboutDavinciPage() {
               launches, resale, and high-end leasing—always aligned to your brief, not ours.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 text-sm">
-              <Link
-                className="font-semibold text-accent underline-offset-4 hover:underline"
-                href="/about-davinci/careers/"
-              >
-                Careers
-              </Link>
-              <span className="text-zinc-300">·</span>
               <Link className="font-semibold text-foreground underline-offset-4 hover:underline" href="/services/">
                 Services
               </Link>

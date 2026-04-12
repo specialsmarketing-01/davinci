@@ -48,7 +48,6 @@ export function Navbar() {
 
   const normalizedPath = pathname.replace(/\/$/, "") || "/";
   const aboutExact = normalizedPath === "/about-davinci";
-  const careersActive = normalizedPath.startsWith("/about-davinci/careers");
 
   const isActive = (href: string) => {
     const current = normalizedPath;
@@ -137,12 +136,6 @@ export function Navbar() {
             className={cn(navLink, "rounded-md px-3 py-2", aboutExact && "text-foreground")}
           >
             About
-          </Link>
-          <Link
-            href="/about-davinci/careers/"
-            className={cn(navLink, "rounded-md px-3 py-2", careersActive && "text-foreground")}
-          >
-            Careers
           </Link>
           <Link
             href="/contact/"
@@ -237,13 +230,6 @@ export function Navbar() {
               onClick={closeMobile}
             >
               About
-            </Link>
-            <Link
-              href="/about-davinci/careers/"
-              className="block rounded-md px-3 py-3 text-base font-medium"
-              onClick={closeMobile}
-            >
-              Careers
             </Link>
             <Link href="/contact/" className="block rounded-md px-3 py-3 text-base font-medium" onClick={closeMobile}>
               Contact
