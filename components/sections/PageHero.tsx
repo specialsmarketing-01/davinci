@@ -27,6 +27,7 @@ export function PageHero({
     <section
       className={cn(
         "relative overflow-hidden border-b border-border",
+        background && "-mt-16",
         background && !fullViewport && "min-h-[280px] bg-black sm:min-h-[320px]",
         fullBleed && "flex min-h-[100svh] flex-col bg-black",
         !background && "bg-zinc-50",
@@ -53,8 +54,10 @@ export function PageHero({
       <div
         className={cn(
           "relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
-          fullBleed && "flex flex-1 flex-col justify-center py-16 sm:py-20 lg:py-24",
-          !fullBleed && "py-14 sm:py-16",
+          fullBleed &&
+            "flex flex-1 flex-col justify-center pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-36",
+          background && !fullBleed && "pb-14 pt-24 sm:pb-16 sm:pt-28",
+          !background && "py-14 sm:py-16",
           align === "center" && "text-center",
         )}
       >

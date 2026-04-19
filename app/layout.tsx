@@ -52,12 +52,12 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-20 focus:z-[100] focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
         >
           Skip to main content
         </a>
         <Navbar />
-        <div className="flex flex-1 flex-col">{children}</div>
+        <div className="flex flex-1 flex-col pt-16">{children}</div>
         <RequestCallbackTab />
         <Footer />
       </body>

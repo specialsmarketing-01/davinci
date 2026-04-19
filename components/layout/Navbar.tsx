@@ -57,7 +57,7 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 shadow-sm backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/25 bg-white/45 shadow-[0_1px_0_0_rgba(255,255,255,0.35)_inset] backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/30">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
         <SiteLogo onNavigate={closeMobile} className="min-w-0 shrink" />
 
@@ -84,7 +84,7 @@ export function Navbar() {
               <Chevron open={false} />
             </button>
             <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-              <div className="min-w-[240px] rounded-lg border border-border bg-background py-2 shadow-xl">
+              <div className="min-w-[240px] rounded-lg border border-white/30 bg-white/75 py-2 shadow-xl backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/55">
                 <ul className="flex flex-col">
                   {propertiesMenu.map((item) => (
                     <li key={item.href}>
@@ -114,7 +114,7 @@ export function Navbar() {
               <Chevron open={false} />
             </button>
             <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-              <div className="min-w-[280px] rounded-lg border border-border bg-background py-2 shadow-xl">
+              <div className="min-w-[280px] rounded-lg border border-white/30 bg-white/75 py-2 shadow-xl backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/55">
                 <ul className="flex flex-col">
                   {servicesMenu.map((item) => (
                     <li key={item.href}>
@@ -145,13 +145,7 @@ export function Navbar() {
           </Link>
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href="/contact/"
-            className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90 sm:inline-flex"
-          >
-            Get in touch
-          </Link>
+        <div className="flex items-center">
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-md border border-border p-2 lg:hidden"
@@ -170,7 +164,7 @@ export function Navbar() {
       {mobileOpen && (
         <div
           id="mobile-menu"
-          className="border-t border-border bg-background lg:hidden"
+          className="border-t border-white/20 bg-white/70 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-white/50 lg:hidden"
           role="dialog"
           aria-modal="true"
         >
@@ -233,13 +227,6 @@ export function Navbar() {
             </Link>
             <Link href="/contact/" className="block rounded-md px-3 py-3 text-base font-medium" onClick={closeMobile}>
               Contact
-            </Link>
-            <Link
-              href="/contact/"
-              className="mt-2 flex w-full items-center justify-center rounded-full bg-foreground py-3 text-sm font-semibold text-background"
-              onClick={closeMobile}
-            >
-              Get in touch
             </Link>
           </div>
         </div>
