@@ -1,15 +1,14 @@
-import { CTA } from "@/components/sections/CTA";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/seo";
+import { contact } from "@/lib/site";
 import { images } from "@/lib/placeholders";
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About Davinci Properties",
+  title: "DaVinci Properties Dubai Real Estate | About Company Overview",
   description:
-    "Discover Davinci Properties—our Dubai real estate philosophy, how we work with clients, and what you can expect from end to end.",
+    "About Davinci Properties—Dubai residential and commercial brokerage, experienced agents, tailored service, and support across buy, sell, lease, and management.",
   path: "/about-davinci/",
 });
 
@@ -17,55 +16,154 @@ export default function AboutDavinciPage() {
   return (
     <main id="main-content" className="flex-1">
       <PageHero
-        eyebrow="About"
-        title="A brokerage built for clarity in fast markets"
-        description="Davinci Properties is a UAE-focused advisory helping clients buy, sell, and lease with disciplined process, transparent communication, and introductions you can trust."
-        background={images.lifestyle}
+        title="ABOUT DAVINCI"
+        description="DaVinci Properties Dubai Real Estate | About Company Overview"
+        background={{ ...images.hero, objectPosition: "50% 40%" }}
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[300px] overflow-hidden rounded-2xl">
-            <Image
-              src={images.lifestyle.src}
-              alt={images.lifestyle.alt}
-              fill
-              className="object-cover"
-              sizes="(max-width:1024px) 100vw, 50vw"
+      <article className="bg-background px-4 py-16 sm:px-6 sm:py-20 lg:py-28">
+        <div className="mx-auto max-w-[40rem] text-center text-pretty">
+          <section>
+            <h2 className="text-[0.8125rem] font-semibold uppercase leading-snug tracking-[0.2em] text-foreground sm:text-sm sm:tracking-[0.24em]">
+              Company overview
+            </h2>
+            <div
+              role="presentation"
+              className="mx-auto mt-5 h-px w-44 bg-foreground/20 sm:mt-6 sm:w-52"
+              aria-hidden
             />
-          </div>
-          <div>
-            <h2 className="text-2xl font-normal">What we believe</h2>
-            <p className="mt-4 text-muted leading-relaxed">
-              Property decisions are emotional and financial at the same time. We protect both: clear numbers,
-              candid trade-offs, and a calm cadence—so you never feel rushed into a signature you do not
-              understand.
+            <p className="mt-8 text-sm font-medium text-foreground sm:text-base">
+              DaVinci Properties Dubai Real Estate | About Company Overview
             </p>
-            <p className="mt-4 text-muted leading-relaxed">
-              Our consultants combine community-level knowledge with transaction experience across off-plan
-              launches, resale, and high-end leasing—always aligned to your brief, not ours.
+            <p className="mx-auto mt-6 max-w-[38rem] text-sm leading-[1.65] text-muted sm:text-base sm:leading-[1.7]">
+              DaVinci properties is a real estate brokerage agency that specializes in providing exceptional
+              residential and commercial properties to its clients. With a focus on quality and attention to
+              detail, Davinci Properties offers a wide range of properties that are designed to meet the needs of
+              individuals and businesses alike. weather you&apos;re looking for a luxurious home or prime commercial
+              space, Davinci properties has the expertise and experience to help you find the perfect property.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4 text-sm">
-              <Link className="font-semibold text-foreground underline-offset-4 hover:underline" href="/services/">
-                Services
-              </Link>
-              <span className="text-zinc-300">·</span>
-              <Link className="font-semibold text-foreground underline-offset-4 hover:underline" href="/contact/">
-                Contact
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <CTA
-        title="Ready for a conversation without pressure?"
-        description="Tell us what you are trying to solve—timeline, budget, and constraints—and we will propose a practical next step."
-        primaryHref="/contact/"
-        primaryLabel="Speak with us"
-        secondaryHref="/our-properties/"
-        secondaryLabel="View properties hub"
-      />
+          <section className="mt-16 text-left sm:mt-20">
+            <h2 className="text-center text-[0.8125rem] font-semibold uppercase leading-snug tracking-[0.2em] text-foreground sm:text-sm sm:tracking-[0.24em]">
+              Real estate brokerage
+            </h2>
+            <div
+              role="presentation"
+              className="mx-auto mt-5 h-px w-44 bg-foreground/20 sm:mt-6 sm:w-52"
+              aria-hidden
+            />
+            <div className="mx-auto mt-8 max-w-[38rem] space-y-6 text-sm leading-[1.65] text-muted sm:text-base sm:leading-[1.7]">
+              <p>
+                Our team of experienced agents is dedicated to providing you with the highest level of service and
+                expertise in the industry.
+              </p>
+              <p>
+                We understand that buying or selling a property can be a daunting process, but with our guidance and
+                support, it can be a seamless and rewarding experience. We pride ourselves on our extensive knowledge
+                of the local market and our ability to match buyers with the perfect property that meets their unique
+                needs and preferences.
+              </p>
+              <p>
+                Whether you&apos;re looking for a luxurious villa, a spacious apartment, or a cozy townhouse, we have a
+                wide selection of properties to choose from. Our listings include a range of amenities, such as swimming
+                pools, gyms, landscaped gardens, and stunning views.
+              </p>
+              <p>
+                At our real estate company, we also offer a range of services beyond just buying and selling properties.
+                We can assist with property management, rental agreements, and even help with the legal and financial
+                aspects of your real estate transactions.
+              </p>
+              <p>
+                So if you&apos;re looking for a reliable and trustworthy real estate partner, look no further than our
+                company. Let us help you find your perfect home or investment property today.
+              </p>
+            </div>
+          </section>
+
+          <div className="mx-auto mt-16 max-w-[38rem] space-y-6 text-sm leading-[1.65] text-muted sm:mt-20 sm:text-base sm:leading-[1.7]">
+            <p>
+              Contact us on Tel:{" "}
+              <a className="font-medium text-foreground underline-offset-2 hover:underline" href={contact.phoneHref}>
+                {contact.phone}
+              </a>{" "}
+              or email as at:{" "}
+              <a className="font-medium text-foreground underline-offset-2 hover:underline" href={contact.emailHref}>
+                {contact.email}
+              </a>
+            </p>
+            <p>Expert guidance on your preference.</p>
+          </div>
+
+          <section className="mt-16 sm:mt-20">
+            <h2 className="text-[0.8125rem] font-semibold uppercase leading-snug tracking-[0.2em] text-foreground sm:text-sm sm:tracking-[0.24em]">
+              Our Approach
+            </h2>
+            <div
+              role="presentation"
+              className="mx-auto mt-5 h-px w-44 bg-foreground/20 sm:mt-6 sm:w-52"
+              aria-hidden
+            />
+            <p className="mx-auto mt-8 max-w-[38rem] text-sm leading-[1.65] text-muted sm:text-base sm:leading-[1.7]">
+              At Davinci, we understand that every client is unique, and we strive to provide customized solutions that
+              meet their specific needs and preferences. We listen to our clients and work closely with them throughout
+              the process to ensure they are fully satisfied with the outcome.
+            </p>
+          </section>
+
+          <section className="mt-16 sm:mt-20">
+            <h2 className="text-[0.8125rem] font-semibold uppercase leading-snug tracking-[0.2em] text-foreground sm:text-sm sm:tracking-[0.24em]">
+              Our Commitment
+            </h2>
+            <div
+              role="presentation"
+              className="mx-auto mt-5 h-px w-44 bg-foreground/20 sm:mt-6 sm:w-52"
+              aria-hidden
+            />
+            <p className="mx-auto mt-8 max-w-[38rem] text-sm leading-[1.65] text-muted sm:text-base sm:leading-[1.7]">
+              We are committed to providing transparent and honest service to our clients. We believe in building
+              long-term relationships based on trust, integrity, and mutual respect. Our goal is to exceed our
+              client&apos;s expectations and earn their loyalty for years to come.
+            </p>
+          </section>
+
+          <section className="mt-16 sm:mt-20">
+            <h2 className="text-[0.8125rem] font-semibold uppercase leading-snug tracking-[0.18em] text-foreground sm:text-sm sm:tracking-[0.22em]">
+              Discover your dream home with our expertise.
+            </h2>
+            <div
+              role="presentation"
+              className="mx-auto mt-5 h-px w-44 bg-foreground/20 sm:mt-6 sm:w-52"
+              aria-hidden
+            />
+            <p className="mx-auto mt-8 max-w-[38rem] text-sm leading-[1.65] text-muted sm:text-base sm:leading-[1.7]">
+              With over 12 languages spoken among our team members, we can communicate effectively with clients from
+              all around the world.
+            </p>
+          </section>
+
+          <p className="mt-14 text-xs uppercase tracking-[0.18em] text-muted sm:mt-16">
+            About Davinci | Real estate Company Dubai
+          </p>
+
+          <p className="mt-10 text-sm text-muted">
+            <Link className="font-semibold text-foreground underline-offset-4 hover:underline" href="/services/">
+              Services
+            </Link>
+            <span className="mx-2 text-zinc-300">·</span>
+            <Link className="font-semibold text-foreground underline-offset-4 hover:underline" href="/contact/">
+              Contact
+            </Link>
+            <span className="mx-2 text-zinc-300">·</span>
+            <Link
+              className="font-semibold text-foreground underline-offset-4 hover:underline"
+              href="/our-properties/"
+            >
+              Properties
+            </Link>
+          </p>
+        </div>
+      </article>
     </main>
   );
 }

@@ -88,37 +88,3 @@ export const projectSpotlights = [
   "Riviera Beachfront",
   "Branded Hotel Residences",
 ] as const;
-
-/** Home — exactly 3 featured projects; images are remote (Unsplash). */
-export const dubaiFeaturedProjects = [
-  {
-    title: "Gems Estates at Damac Hills, Dubai",
-    location: "Dubai, Damac Hills",
-    price: "AED 1,584,794",
-    imageSrc:
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80",
-    imageAlt: "Luxury villa and pool at twilight",
-    href: "/our-properties/",
-    tagline: null as string | null,
-  },
-  {
-    title: "Maimoon Gardens",
-    location: "Dubai, Jumeirah Village",
-    price: "AED 830,000",
-    imageSrc:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=80",
-    imageAlt: "Dubai skyline and waterfront towers at golden hour",
-    href: "/our-properties/",
-    tagline: "The perfect blend of affordability and sustainability",
-  },
-  {
-    title: "SLS Dubai Hotel Apartments",
-    location: "Dubai, Business Bay",
-    price: "AED 600,000",
-    imageSrc:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80",
-    imageAlt: "Waterfront residential architecture with palm-lined promenade",
-    href: "/our-properties/",
-    tagline: null as string | null,
-  },
-] as const;

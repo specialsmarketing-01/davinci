@@ -8,11 +8,11 @@ export const propertiesMenu = [
 
 export const servicesMenu = [
   {
-    label: "Property Investment Consultancy",
+    label: "Property & Investment Consultancy",
     href: "/services/property-investment-consultancy/",
   },
   { label: "Golden Visa", href: "/services/golden-visa/" },
-  { label: "Dubai Residence Visa", href: "/services/get-dubai-residence-visa/" },
+  { label: "Get Dubai Residence Visa", href: "/services/get-dubai-residence-visa/" },
   { label: "Mortgage Advisory", href: "/services/mortgage-advisory/" },
   { label: "Buyer Guide", href: "/services/buyer-guide/" },
   { label: "Seller Guide", href: "/services/seller-guide/" },

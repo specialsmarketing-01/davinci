@@ -1,5 +1,6 @@
 import { CTA } from "@/components/sections/CTA";
 import { PageHero } from "@/components/sections/PageHero";
+import { SellPropertyLeadSection } from "@/components/sections/SellPropertyLeadSection";
 import { buildPageMetadata } from "@/lib/seo";
 import { images } from "@/lib/placeholders";
 import Link from "next/link";
@@ -19,7 +20,7 @@ export default function SellPropertiesPage() {
         eyebrow="Sell"
         title="Bring your asset to market with confidence"
         description="We help you position your property with credible pricing, targeted marketing, and calm negotiation—so serious buyers recognise value quickly."
-        background={images.villa}
+        background={images.sellPropertyHero}
       />
 
       <section className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
@@ -41,6 +42,8 @@ export default function SellPropertiesPage() {
           .
         </p>
       </section>
+
+      <SellPropertyLeadSection />
 
       <CTA
         title="Request a valuation conversation"

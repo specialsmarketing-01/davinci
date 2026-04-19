@@ -3,7 +3,6 @@ import { CTA } from "@/components/sections/CTA";
 import { ExclusiveListingsLeadSection } from "@/components/sections/ExclusiveListingsLeadSection";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectsStrip } from "@/components/sections/ProjectsStrip";
-import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsSection";
 import { JourneyStagePillarsSection } from "@/components/sections/JourneyStagePillarsSection";
 import { AboutDavinciSplitSection } from "@/components/sections/AboutDavinciSplitSection";
 import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
@@ -34,7 +33,6 @@ export default function HomePage() {
       <ExclusiveListingsLeadSection />
       <JourneyStagePillarsSection />
       <ServicesSection />
-      <FeaturedProjectsSection />
       <WhyUs />
       <ProjectsStrip />
       <PartnerLogosSection />
