@@ -7,7 +7,6 @@ import { JourneyStagePillarsSection } from "@/components/sections/JourneyStagePi
 import { AboutDavinciSplitSection } from "@/components/sections/AboutDavinciSplitSection";
 import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
-import { WhyUs } from "@/components/sections/WhyUs";
 import { seoKeywords, siteDescription, siteName } from "@/lib/site";
 import type { Metadata } from "next";
 
@@ -33,7 +32,6 @@ export default function HomePage() {
       <ExclusiveListingsLeadSection />
       <JourneyStagePillarsSection />
       <ServicesSection />
-      <WhyUs />
       <ProjectsStrip />
       <PartnerLogosSection />
       <AboutDavinciSplitSection />
