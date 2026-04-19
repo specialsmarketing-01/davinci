@@ -49,7 +49,7 @@ export function ContactForm() {
       </div>
       <div>
         <label htmlFor="interest" className="text-sm font-medium text-foreground">
-          I am interested in
+          What Are You Interested In?
         </label>
         <select
           id="interest"
@@ -60,10 +60,11 @@ export function ContactForm() {
           <option value="" disabled>
             Select an option
           </option>
-          <option value="buy">Buying</option>
-          <option value="sell">Selling</option>
-          <option value="rent">Renting</option>
-          <option value="invest">Investment advisory</option>
+          <option value="buying">Buying</option>
+          <option value="selling">Selling</option>
+          <option value="area-information">Area Information</option>
+          <option value="home-valuation">Home Valuation</option>
+          <option value="other">Other</option>
         </select>
       </div>
       <div>

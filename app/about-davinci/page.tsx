@@ -1,7 +1,7 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/seo";
 import { contact } from "@/lib/site";
-import { images } from "@/lib/placeholders";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -18,11 +18,15 @@ export default function AboutDavinciPage() {
       <PageHero
         title="ABOUT DAVINCI"
         description="DaVinci Properties Dubai Real Estate | About Company Overview"
-        background={{ ...images.hero, objectPosition: "50% 40%" }}
+        background={{
+          src: "/about-davinci-skyline-night.png",
+          alt: "Dubai skyline at night with illuminated towers including Burj Khalifa",
+          objectPosition: "50% 45%",
+        }}
       />
 
-      <article className="bg-background px-4 py-16 sm:px-6 sm:py-20 lg:py-28">
-        <div className="mx-auto max-w-[40rem] text-center text-pretty">
+      <article className="bg-background py-16 sm:py-20 lg:py-28">
+        <div className="mx-auto max-w-[40rem] px-4 text-center text-pretty sm:px-6">
           <section>
             <h2 className="text-[0.8125rem] font-semibold uppercase leading-snug tracking-[0.2em] text-foreground sm:text-sm sm:tracking-[0.24em]">
               Company overview
@@ -80,7 +84,22 @@ export default function AboutDavinciPage() {
               </p>
             </div>
           </section>
+        </div>
 
+        <figure className="mx-auto mt-14 w-full max-w-5xl px-4 sm:mt-16 sm:px-6 lg:px-8">
+          <div className="overflow-hidden rounded-2xl border border-border shadow-[0_20px_50px_-12px_rgba(0,0,0,0.18)]">
+            <Image
+              src="/about-davinci-architecture.png"
+              alt="Low-angle view of modern curved towers framing a bright sky"
+              width={1024}
+              height={682}
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 1024px) 100vw, 896px"
+            />
+          </div>
+        </figure>
+
+        <div className="mx-auto max-w-[40rem] px-4 text-center text-pretty sm:px-6">
           <div className="mx-auto mt-16 max-w-[38rem] space-y-6 text-sm leading-[1.65] text-muted sm:mt-20 sm:text-base sm:leading-[1.7]">
             <p>
               Contact us on Tel:{" "}
