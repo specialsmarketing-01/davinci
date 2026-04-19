@@ -7,8 +7,8 @@ export function Hero() {
     <section className="relative isolate overflow-hidden" aria-labelledby="hero-heading">
       <div className="absolute inset-0">
         <Image
-          src={images.hero.src}
-          alt={images.hero.alt}
+          src={images.homeHero.src}
+          alt={images.homeHero.alt}
           fill
           priority
           className="object-cover"

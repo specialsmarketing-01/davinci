@@ -5,6 +5,11 @@ export const images = {
     src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2400&q=85",
     alt: "Dubai skyline at dusk with modern towers reflecting golden light",
   },
+  /** Home page hero — modern villa with infinity pool at twilight. */
+  homeHero: {
+    src: "/home-hero.png",
+    alt: "Modern luxury villa with infinity pool at dusk, glass façade and warm interior lighting",
+  },
   villa: {
     src: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
     alt: "Contemporary luxury villa exterior with pool at twilight",

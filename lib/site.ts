@@ -24,7 +24,6 @@ export const contact = {
   email: "info@davinci-properties.com",
   emailHref: "mailto:info@davinci-properties.com",
   addressLines: officeAddressLines,
-  whatsappHref: "https://wa.me/971527729114",
   officeHours: {
     lines: ["Mon - Fri:", "10 AM - 6 PM"] as const,
   },

@@ -1,25 +1,4 @@
-export const serviceHighlights = [
-  {
-    title: "Investment Advisory",
-    description:
-      "Scenario planning and market context so every decision is grounded in numbers—not noise.",
-    href: "/services/property-investment-consultancy/",
-  },
-  {
-    title: "Visa & Residency",
-    description:
-      "Coordinated guidance across Golden Visa and Dubai residence routes tied to your property goals.",
-    href: "/services/get-dubai-residence-visa/",
-  },
-  {
-    title: "Mortgage Strategy",
-    description:
-      "Compare structures, fees, and repayment profiles with advisors who speak bank and buyer.",
-    href: "/services/mortgage-advisory/",
-  },
-] as const;
-
-/** Numbered pillars — dark strip before Services */
+/** Numbered pillars — dark strip before Golden Visa promo */
 export const journeyStagePillars = [
   {
     step: "01",
@@ -43,29 +22,6 @@ export const journeyStagePillars = [
   },
 ] as const;
 
-export const whyUs = [
-  {
-    step: "01",
-    title: "Committed team",
-    body: "Senior consultants who stay accountable from first viewing to handover.",
-  },
-  {
-    step: "02",
-    title: "Market fluency",
-    body: "On-the-ground pricing intelligence across communities you actually want to live in.",
-  },
-  {
-    step: "03",
-    title: "The Davinci standard",
-    body: "Transparent timelines, disciplined follow-up, and documentation you can rely on.",
-  },
-  {
-    step: "04",
-    title: "Experienced negotiators",
-    body: "Calm representation in competitive situations—off-plan, resale, and rental.",
-  },
-] as const;
-
 /** Developer partner logos — files in /public/partners/ */
 export const partnerLogos = [
   { name: "DAMAC", src: "/partners/damac.png" },
@@ -79,12 +35,4 @@ export const partnerLogos = [
   { name: "Sobha Realty", src: "/partners/sobha.png" },
   { name: "Emaar", src: "/partners/emaar.png" },
   { name: "Omniyat", src: "/partners/omniyat.png" },
-] as const;
-
-export const projectSpotlights = [
-  "Safa District",
-  "Damac Gems Estate",
-  "Downtown Dubai",
-  "Riviera Beachfront",
-  "Branded Hotel Residences",
 ] as const;

@@ -3,7 +3,6 @@ import { Poppins } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { RequestCallbackTab } from "@/components/layout/RequestCallbackTab";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
 import { seoKeywords, siteDescription, siteName } from "@/lib/site";
 import "./globals.css";
@@ -60,7 +59,6 @@ export default function RootLayout({
         <Navbar />
         <div className="flex flex-1 flex-col">{children}</div>
         <RequestCallbackTab />
-        <WhatsAppButton />
         <Footer />
       </body>
     </html>
