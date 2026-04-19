@@ -16,7 +16,7 @@ export function GoldenVisaHomeSection() {
           <div className="mx-auto flex w-full max-w-xl justify-center lg:mx-0 lg:max-w-none">
             <Image
               src="/golden-visa-home-promo.png"
-              alt="UAE Golden Visa card — 10-year residency graphic with UAE emblem and Dubai skyline"
+              alt="UAE Golden Visa card — 10-year residency, UAE emblem, and Dubai skyline graphic"
               width={900}
               height={675}
               className="h-auto w-full max-w-md object-contain lg:max-w-lg"
