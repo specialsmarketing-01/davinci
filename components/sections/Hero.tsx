@@ -4,7 +4,7 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section
-      className="relative isolate -mt-16 min-h-svh overflow-hidden"
+      className="relative isolate -mt-16 min-h-[75svh] overflow-hidden"
       aria-label="Davinci Properties — Dubai real estate"
     >
       <div className="absolute inset-0">
@@ -17,7 +17,11 @@ export function Hero() {
           sizes="100vw"
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/[0.18]"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/55"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/25 via-transparent to-black/25"
           aria-hidden
         />
       </div>

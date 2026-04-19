@@ -2,22 +2,25 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171515;
+  /** Primary text / near-black (opaque for crisp type) */
+  --foreground: #020101;
   --muted: #525252;
-  --accent: #c9a227;
-  --accent-foreground: #1a1406;
+  --accent: #c4ab6e;
+  --accent-foreground: #020101;
+  /** Site black with alpha — used by Tailwind `black` (bg-black, text-black, shadows, etc.) */
+  --site-black: #020101f0;
   --border: #e5e5e5;
-  /** Gold-leaning brown for text on dark sections (stats strip, footer links) */
-  --accent-on-dark: #a67c52;
-  /** Slightly lighter brown for large stat numerals on black */
-  --accent-on-dark-bright: #c9a882;
+  /** Brown on dark sections (stats strip, footer) — same family as accent */
+  --accent-on-dark: #c4ab6e;
+  /** Lighter brown for large stat numerals on black */
+  --accent-on-dark-bright: #d8c9a0;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /** Replaces default #000 — used by bg-black, text-black, from-black, etc. */
-  --color-black: #171515;
+  /** Replaces default #000 — bg-black, text-black, from-black, ring-black, etc. */
+  --color-black: var(--site-black);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);

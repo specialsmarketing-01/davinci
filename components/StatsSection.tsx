@@ -50,7 +50,7 @@ export function StatsSection() {
                 className="rounded-none object-cover object-center transition duration-300 ease-out group-hover:scale-[1.01]"
               />
             </div>
-            <div className="flex w-full flex-shrink-0 flex-col items-center justify-center gap-1 bg-black px-5 py-8 md:w-auto md:min-w-[9rem] md:px-4 md:py-10 lg:min-w-[10rem] lg:px-5">
+            <div className="flex w-full flex-shrink-0 flex-col items-center justify-center gap-1 bg-[#020101f0] px-5 py-8 md:w-auto md:min-w-[9rem] md:px-4 md:py-10 lg:min-w-[10rem] lg:px-5">
               <StatCounter target={500} suffix="+" label="Happy Clients" align="center" />
             </div>
           </div>

@@ -10,7 +10,7 @@ export function PartnerLogosSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
           id="partners-heading"
-          className="text-center text-2xl font-light tracking-tight text-foreground sm:text-3xl lg:text-4xl"
+          className="text-center text-3xl font-light tracking-tight text-foreground sm:text-4xl lg:text-5xl"
         >
           Partners
         </h2>
@@ -30,20 +30,20 @@ export function PartnerLogosSection() {
             {[0, 1].map((copy) => (
               <div
                 key={copy}
-                className="flex shrink-0 items-center gap-x-10 sm:gap-x-14"
+                className="flex shrink-0 items-center gap-x-12 sm:gap-x-14"
                 aria-hidden={copy === 1 ? true : undefined}
               >
                 {partnerLogos.map((partner) => (
                   <div
                     key={`${copy}-${partner.name}`}
-                    className="relative h-11 w-[7.5rem] shrink-0 sm:h-12 sm:w-32 md:h-14 md:w-36"
+                    className="relative h-14 w-44 shrink-0 sm:h-14 sm:w-40 md:h-16 md:w-44"
                   >
                     <Image
                       src={partner.src}
                       alt={partner.name}
                       fill
                       className="object-contain object-center"
-                      sizes="(max-width: 768px) 120px, 144px"
+                      sizes="(max-width: 768px) 176px, 192px"
                     />
                   </div>
                 ))}

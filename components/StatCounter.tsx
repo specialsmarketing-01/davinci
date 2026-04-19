@@ -57,7 +57,7 @@ export function StatCounter({
       )}
       aria-live="polite"
     >
-      <p className="text-5xl font-extralight tabular-nums leading-none tracking-tight text-accent-on-dark-bright md:text-6xl">
+      <p className="text-5xl font-extralight tabular-nums leading-none tracking-tight text-white md:text-6xl">
         {prefix}
         {value}
         {suffix}
