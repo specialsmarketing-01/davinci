@@ -7,12 +7,12 @@ export function ServicesSection() {
     <section className="py-16 sm:py-24" aria-labelledby="services-heading">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Services</p>
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Services</p>
           <h2
             id="services-heading"
-            className="mt-3 font-[family-name:var(--font-playfair)] text-3xl font-semibold sm:text-4xl"
+            className="mt-3 text-3xl font-light sm:text-4xl"
           >
-            Guidance for every stage of your property journey
+            What we deliver together
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
             Whether you are relocating, investing for yield, or preparing a portfolio exit, our

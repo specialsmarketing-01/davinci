@@ -9,7 +9,7 @@ export type ServiceCardProps = {
 export function ServiceCard({ title, description, href }: ServiceCardProps) {
   return (
     <article className="flex h-full flex-col rounded-2xl border border-border bg-zinc-50/80 p-6 transition hover:border-accent/40 hover:shadow-md">
-      <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold text-foreground">
+      <h3 className="text-xl font-normal text-foreground">
         {title}
       </h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{description}</p>

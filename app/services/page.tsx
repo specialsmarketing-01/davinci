@@ -15,8 +15,8 @@ export default function ServicesIndexPage() {
     <main id="main-content" className="flex-1">
       <header className="border-b border-border bg-zinc-50">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Services</p>
-          <h1 className="mt-3 font-[family-name:var(--font-playfair)] text-4xl font-semibold sm:text-5xl">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Services</p>
+          <h1 className="mt-3 text-4xl font-light sm:text-5xl">
             Expertise across the full property lifecycle
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
@@ -30,7 +30,7 @@ export default function ServicesIndexPage() {
           {services.map((s) => (
             <li key={s.slug}>
               <article className="h-full rounded-2xl border border-border p-6 transition hover:border-accent/40 hover:shadow-md">
-                <h2 className="font-[family-name:var(--font-playfair)] text-xl font-semibold">
+                <h2 className="text-xl font-normal">
                   <Link href={`/services/${s.slug}/`} className="hover:underline">
                     {s.title}
                   </Link>

@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
+import { RequestCallbackTab } from "@/components/layout/RequestCallbackTab";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
 import { seoKeywords, siteDescription, siteName } from "@/lib/site";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -52,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${playfair.variable} h-full`}>
+    <html lang="en" className={`${poppins.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased bg-background text-foreground">
         <OrganizationJsonLd />
         <a
@@ -63,6 +59,7 @@ export default function RootLayout({
         </a>
         <Navbar />
         <div className="flex flex-1 flex-col">{children}</div>
+        <RequestCallbackTab />
         <WhatsAppButton />
         <Footer />
       </body>

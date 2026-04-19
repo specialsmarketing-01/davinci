@@ -85,7 +85,7 @@ export function PropertyDetailBody({
       <section className="border-t border-border bg-white py-14">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
           <div>
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">Overview</h2>
+            <h2 className="text-2xl font-normal">Overview</h2>
             <dl className="mt-8 grid gap-6 sm:grid-cols-2">
               <div>
                 <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Price</dt>
@@ -113,7 +113,7 @@ export function PropertyDetailBody({
               </div>
             </dl>
 
-            <h3 className="mt-12 font-[family-name:var(--font-playfair)] text-xl font-semibold">Highlights</h3>
+            <h3 className="mt-12 text-xl font-normal">Highlights</h3>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-muted">
               {property.highlights.map((h) => (
                 <li key={h}>{h}</li>

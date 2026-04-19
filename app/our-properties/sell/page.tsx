@@ -23,7 +23,7 @@ export default function SellPropertiesPage() {
       />
 
       <section className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">What to expect</h2>
+        <h2 className="text-2xl font-normal">What to expect</h2>
         <ul className="mt-6 list-disc space-y-3 pl-5 text-muted">
           <li>Comparable market analysis with transparent assumptions</li>
           <li>Presentation guidance and introductions to trusted staging partners where needed</li>

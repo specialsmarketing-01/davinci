@@ -50,8 +50,8 @@ export function CTA({
       <div className="pointer-events-none absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-white/5 blur-3xl" />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">{eyebrow}</p>
-          <h2 className="mt-4 font-[family-name:var(--font-playfair)] text-3xl font-semibold sm:text-4xl">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">{eyebrow}</p>
+          <h2 className="mt-4 text-3xl font-light sm:text-4xl">
             {title}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-zinc-300 sm:text-lg">{description}</p>

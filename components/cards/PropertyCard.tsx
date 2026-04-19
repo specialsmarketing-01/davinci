@@ -23,7 +23,7 @@ export function PropertyCard({ property }: Props) {
         </span>
       </Link>
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <h3 className="font-[family-name:var(--font-playfair)] text-xl font-semibold leading-snug text-foreground">
+        <h3 className="text-xl font-normal leading-snug text-foreground">
           <Link href={property.href} className="hover:underline">
             {property.title}
           </Link>

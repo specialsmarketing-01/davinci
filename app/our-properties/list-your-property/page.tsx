@@ -26,7 +26,7 @@ export default function ListYourPropertyPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div>
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">What we optimise</h2>
+            <h2 className="text-2xl font-normal">What we optimise</h2>
             <ul className="mt-6 list-disc space-y-3 pl-5 text-muted">
               <li>Comparable-driven pricing with candid trade-offs—not inflated promises</li>
               <li>Media coordination and channel selection aligned to your timeline</li>

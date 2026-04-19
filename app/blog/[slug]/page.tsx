@@ -32,8 +32,8 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <main id="main-content" className="flex-1">
       <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Insights</p>
-        <h1 className="mt-3 font-[family-name:var(--font-playfair)] text-4xl font-semibold">{post.title}</h1>
+        <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Insights</p>
+        <h1 className="mt-3 text-4xl font-light">{post.title}</h1>
         <p className="mt-4 text-lg text-muted">{post.summary}</p>
         <p className="mt-10 text-muted leading-relaxed">
           Add long-form content in this route when you are ready. The structure supports static generation from{" "}

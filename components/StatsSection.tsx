@@ -11,7 +11,7 @@ export function StatsSection() {
       <div className="px-4 py-8 md:px-6 md:py-10 lg:px-8">
         <p
           id="stats-heading"
-          className="mb-6 text-center text-[11px] font-medium uppercase tracking-[0.25em] text-[#C8A96A] md:mb-8 md:text-xs"
+          className="mb-6 text-center text-[11px] font-medium uppercase tracking-[0.25em] text-accent-on-dark md:mb-8 md:text-xs"
         >
           At a glance
         </p>
@@ -29,7 +29,7 @@ export function StatsSection() {
                 sizes="(max-width: 768px) 216px, 240px"
               />
             </div>
-            <p className="max-w-[16rem] text-center text-[13px] font-medium uppercase leading-snug tracking-[0.22em] text-[#C8A96A] sm:text-[14px]">
+            <p className="max-w-[16rem] text-center text-[13px] font-medium uppercase leading-snug tracking-[0.22em] text-accent-on-dark sm:text-[14px]">
               We Accept Crypto
             </p>
           </div>
@@ -50,7 +50,7 @@ export function StatsSection() {
                 className="rounded-none object-cover object-center transition duration-300 ease-out group-hover:scale-[1.01]"
               />
             </div>
-            <div className="flex w-full flex-shrink-0 flex-col items-center justify-center gap-1 bg-zinc-950 px-5 py-8 md:w-auto md:min-w-[9rem] md:px-4 md:py-10 lg:min-w-[10rem] lg:px-5">
+            <div className="flex w-full flex-shrink-0 flex-col items-center justify-center gap-1 bg-black px-5 py-8 md:w-auto md:min-w-[9rem] md:px-4 md:py-10 lg:min-w-[10rem] lg:px-5">
               <StatCounter target={500} suffix="+" label="Happy Clients" align="center" />
             </div>
           </div>

@@ -22,7 +22,7 @@ export function PageHero({
     <section
       className={cn(
         "relative overflow-hidden border-b border-border",
-        background ? "min-h-[280px] bg-zinc-950 sm:min-h-[320px]" : "bg-zinc-50",
+        background ? "min-h-[280px] bg-black sm:min-h-[320px]" : "bg-zinc-50",
         className,
       )}
       aria-labelledby="page-hero-heading"
@@ -49,7 +49,7 @@ export function PageHero({
         {eyebrow && (
           <p
             className={cn(
-              "text-xs font-semibold uppercase tracking-[0.3em]",
+              "text-xs font-medium uppercase tracking-[0.3em]",
               background ? "text-accent" : "text-accent",
             )}
           >
@@ -59,7 +59,7 @@ export function PageHero({
         <h1
           id="page-hero-heading"
           className={cn(
-            "mt-3 max-w-3xl font-[family-name:var(--font-playfair)] text-4xl font-semibold sm:text-5xl",
+            "mt-3 max-w-3xl text-4xl font-light sm:text-5xl",
             background ? "text-white" : "text-foreground",
             align === "center" && "mx-auto",
           )}

@@ -43,7 +43,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-zinc-300 transition hover:text-accent"
+                    className="text-sm text-zinc-300 transition hover:text-accent-on-dark"
                   >
                     {item.label}
                   </Link>
@@ -58,7 +58,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-zinc-300 transition hover:text-accent"
+                    className="text-sm text-zinc-300 transition hover:text-accent-on-dark"
                   >
                     {item.label}
                   </Link>
@@ -74,7 +74,7 @@ export function Footer() {
               ))}
             </div>
             <p className="mt-3">
-              <a className="text-sm text-accent hover:underline" href={contact.phoneHref}>
+              <a className="text-sm text-accent-on-dark hover:underline" href={contact.phoneHref}>
                 {contact.phone}
               </a>
             </p>
@@ -90,7 +90,7 @@ export function Footer() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-semibold uppercase tracking-wider text-zinc-400 transition hover:text-accent"
+                    className="text-xs font-semibold uppercase tracking-wider text-zinc-400 transition hover:text-accent-on-dark"
                   >
                     {s.label}
                   </a>

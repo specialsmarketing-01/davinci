@@ -18,10 +18,10 @@ export function ProjectsStrip() {
       </div>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Projects</p>
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Projects</p>
           <h2
             id="projects-heading"
-            className="mt-3 font-[family-name:var(--font-playfair)] text-3xl font-semibold text-white sm:text-4xl"
+            className="mt-3 text-3xl font-light text-white sm:text-4xl"
           >
             Discover the latest developments shaping Dubai
           </h2>

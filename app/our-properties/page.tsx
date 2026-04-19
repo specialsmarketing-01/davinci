@@ -35,28 +35,28 @@ export default function OurPropertiesPage() {
             href="/our-properties/sell/"
             className="rounded-2xl border border-border bg-zinc-50 p-5 transition hover:border-accent/40 hover:shadow-md"
           >
-            <p className="text-sm font-semibold text-foreground">Sell</p>
+            <p className="text-sm font-medium text-foreground">Sell</p>
             <p className="mt-2 text-sm text-muted">Pricing, presentation, and negotiation support.</p>
           </Link>
           <Link
             href="/rent/"
             className="rounded-2xl border border-border bg-zinc-50 p-5 transition hover:border-accent/40 hover:shadow-md"
           >
-            <p className="text-sm font-semibold text-foreground">Rent</p>
+            <p className="text-sm font-medium text-foreground">Rent</p>
             <p className="mt-2 text-sm text-muted">Tenant-first search with lease clarity upfront.</p>
           </Link>
           <Link
             href="/our-properties/international-properties/"
             className="rounded-2xl border border-border bg-zinc-50 p-5 transition hover:border-accent/40 hover:shadow-md"
           >
-            <p className="text-sm font-semibold text-foreground">International</p>
+            <p className="text-sm font-medium text-foreground">International</p>
             <p className="mt-2 text-sm text-muted">Plan diversification beyond the UAE with structure.</p>
           </Link>
           <Link
             href="/our-properties/list-your-property/"
             className="rounded-2xl border border-border bg-zinc-50 p-5 transition hover:border-accent/40 hover:shadow-md"
           >
-            <p className="text-sm font-semibold text-foreground">List</p>
+            <p className="text-sm font-medium text-foreground">List</p>
             <p className="mt-2 text-sm text-muted">Marketing reach with transparent reporting.</p>
           </Link>
         </div>
@@ -65,10 +65,10 @@ export default function OurPropertiesPage() {
       <section className="border-t border-border bg-zinc-50 py-16 sm:py-20" aria-labelledby="listings-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Spotlight</p>
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Spotlight</p>
             <h2
               id="listings-heading"
-              className="mt-3 font-[family-name:var(--font-playfair)] text-3xl font-semibold sm:text-4xl"
+              className="mt-3 text-3xl font-light sm:text-4xl"
             >
               Featured listings
             </h2>

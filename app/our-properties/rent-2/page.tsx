@@ -23,7 +23,7 @@ export default function RentTwoPage() {
       />
 
       <section className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">What you can expect</h2>
+        <h2 className="text-2xl font-normal">What you can expect</h2>
         <ul className="mt-6 list-disc space-y-3 pl-5 text-muted">
           <li>Brief capture: budget, move-in date, must-haves, and commute anchors</li>
           <li>Shortlist refresh as inventory changes—without spamming your inbox</li>

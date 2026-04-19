@@ -45,7 +45,7 @@ export default function BlogIndexPage() {
               <li key={post.slug} className="rounded-2xl border border-border p-6">
                 <Link
                   href={`/blog/${post.slug}/`}
-                  className="font-[family-name:var(--font-playfair)] text-xl font-semibold hover:underline"
+                  className="text-xl font-normal hover:underline"
                 >
                   {post.title}
                 </Link>

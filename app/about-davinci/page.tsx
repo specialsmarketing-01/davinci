@@ -35,7 +35,7 @@ export default function AboutDavinciPage() {
             />
           </div>
           <div>
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">What we believe</h2>
+            <h2 className="text-2xl font-normal">What we believe</h2>
             <p className="mt-4 text-muted leading-relaxed">
               Property decisions are emotional and financial at the same time. We protect both: clear numbers,
               candid trade-offs, and a calm cadence—so you never feel rushed into a signature you do not

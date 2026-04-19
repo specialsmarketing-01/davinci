@@ -25,14 +25,14 @@ export default function RentHubPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2">
           <article className="rounded-2xl border border-border bg-zinc-50 p-8">
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">Tenant-first process</h2>
+            <h2 className="text-2xl font-normal">Tenant-first process</h2>
             <p className="mt-4 text-muted leading-relaxed">
               We coordinate viewings efficiently, clarify deposits and renewals upfront, and stay available
               through handover—so you can focus on settling in rather than chasing updates.
             </p>
           </article>
           <article className="rounded-2xl border border-border bg-white p-8 shadow-sm">
-            <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">Need a tighter search?</h2>
+            <h2 className="text-2xl font-normal">Need a tighter search?</h2>
             <p className="mt-4 text-muted leading-relaxed">
               If you want a consultant-led shortlist with scheduled viewings, use our{" "}
               <Link

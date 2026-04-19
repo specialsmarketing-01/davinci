@@ -23,7 +23,7 @@ export default function InternationalPropertiesPage() {
       />
 
       <section className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">How we work</h2>
+        <h2 className="text-2xl font-normal">How we work</h2>
         <p className="mt-4 text-muted leading-relaxed">
           International buying is rarely about a single asset—it is about timing, taxation context, and how
           liquidity moves between jurisdictions. We start with your Dubai plan, then align external options to

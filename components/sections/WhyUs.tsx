@@ -21,8 +21,8 @@ export function WhyUs() {
           </p>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Why Davinci</p>
-          <h2 id="why-heading" className="mt-3 font-[family-name:var(--font-playfair)] text-3xl font-semibold sm:text-4xl">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Why Davinci</p>
+          <h2 id="why-heading" className="mt-3 text-3xl font-light sm:text-4xl">
             A partner-led experience built for Dubai&apos;s pace
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
@@ -32,11 +32,11 @@ export function WhyUs() {
           <ol className="mt-10 space-y-8">
             {whyUs.map((item) => (
               <li key={item.step} className="flex gap-5">
-                <span className="font-[family-name:var(--font-playfair)] text-2xl text-accent">
+                <span className="text-2xl text-accent">
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                  <h3 className="text-lg font-normal text-foreground">{item.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
                 </div>
               </li>

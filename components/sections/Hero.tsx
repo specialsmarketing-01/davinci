@@ -19,12 +19,12 @@ export function Hero() {
       </div>
       <div className="relative mx-auto flex min-h-[min(88vh,920px)] max-w-7xl flex-col justify-end px-4 pb-16 pt-28 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
         <div className="max-w-2xl animate-fade-up">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-accent">
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-accent">
             Dubai luxury real estate
           </p>
           <h1
             id="hero-heading"
-            className="mt-4 font-[family-name:var(--font-playfair)] text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="mt-4 text-4xl font-light leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
             Elevate how you buy, sell, and lease property in Dubai
           </h1>
@@ -47,32 +47,6 @@ export function Hero() {
             </Link>
           </div>
         </div>
-        <dl className="mt-14 grid max-w-3xl grid-cols-2 gap-6 border-t border-white/15 pt-8 sm:grid-cols-4 animate-fade-up animate-delay-200">
-          <div>
-            <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-              Languages
-            </dt>
-            <dd className="mt-1 font-[family-name:var(--font-playfair)] text-2xl text-white">12+</dd>
-          </div>
-          <div>
-            <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-              Happy clients
-            </dt>
-            <dd className="mt-1 font-[family-name:var(--font-playfair)] text-2xl text-white">2.5k+</dd>
-          </div>
-          <div>
-            <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-              Avg. response
-            </dt>
-            <dd className="mt-1 font-[family-name:var(--font-playfair)] text-2xl text-white">&lt; 2h</dd>
-          </div>
-          <div>
-            <dt className="text-[11px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
-              Crypto-ready
-            </dt>
-            <dd className="mt-1 font-[family-name:var(--font-playfair)] text-2xl text-white">Yes</dd>
-          </div>
-        </dl>
       </div>
     </section>
   );

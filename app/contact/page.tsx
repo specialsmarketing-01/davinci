@@ -25,7 +25,7 @@ export default function ContactPage() {
 
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 lg:grid-cols-2 lg:px-8">
         <aside className="space-y-6">
-          <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-semibold">Office</h2>
+          <h2 className="text-2xl font-normal">Office</h2>
           <address className="not-italic text-muted">
             <div className="space-y-2">
               {contact.addressLines.map((line) => (

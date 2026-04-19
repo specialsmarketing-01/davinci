@@ -42,8 +42,8 @@ export default async function ServiceDetailPage({ params }: Props) {
     <main id="main-content" className="flex-1">
       <header className="border-b border-border bg-zinc-50">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Service</p>
-          <h1 className="mt-3 font-[family-name:var(--font-playfair)] text-4xl font-semibold sm:text-5xl">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Service</p>
+          <h1 className="mt-3 text-4xl font-light sm:text-5xl">
             {service.title}
           </h1>
           <p className="mt-4 text-lg text-muted">{service.summary}</p>

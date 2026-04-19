@@ -1,9 +1,12 @@
-import { PropertyCTASection } from "@/components/PropertyCTASection";
 import { StatsSection } from "@/components/StatsSection";
 import { CTA } from "@/components/sections/CTA";
-import { FeaturedProperties } from "@/components/sections/FeaturedProperties";
+import { ExclusiveListingsLeadSection } from "@/components/sections/ExclusiveListingsLeadSection";
 import { Hero } from "@/components/sections/Hero";
 import { ProjectsStrip } from "@/components/sections/ProjectsStrip";
+import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsSection";
+import { JourneyStagePillarsSection } from "@/components/sections/JourneyStagePillarsSection";
+import { AboutDavinciSplitSection } from "@/components/sections/AboutDavinciSplitSection";
+import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { seoKeywords, siteDescription, siteName } from "@/lib/site";
@@ -28,11 +31,14 @@ export default function HomePage() {
     <main id="main-content">
       <Hero />
       <StatsSection />
-      <FeaturedProperties />
-      <PropertyCTASection />
+      <ExclusiveListingsLeadSection />
+      <JourneyStagePillarsSection />
       <ServicesSection />
+      <FeaturedProjectsSection />
       <WhyUs />
       <ProjectsStrip />
+      <PartnerLogosSection />
+      <AboutDavinciSplitSection />
       <CTA
         title="Ready to move with clarity?"
         description="Share your goals—purchase, lease, or portfolio planning—and we will assemble a concise roadmap with timelines, milestones, and next actions."
