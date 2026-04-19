@@ -64,3 +64,24 @@ body {
 .animate-delay-300 {
   animation-delay: 0.3s;
 }
+
+@keyframes partner-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-partner-marquee {
+  animation: partner-marquee 55s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-partner-marquee {
+    animation: none;
+    will-change: auto;
+  }
+}

@@ -8,19 +8,20 @@ const bullets = [
 export function GoldenVisaHomeSection() {
   return (
     <section
-      className="border-b border-white/10 bg-black py-16 text-white sm:py-24"
+      className="border-b border-white/10 bg-black py-8 text-white sm:py-10 lg:py-12"
       aria-labelledby="golden-visa-home-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10">
           <div className="mx-auto flex w-full max-w-xl justify-center lg:mx-0 lg:max-w-none">
             <Image
               src="/golden-visa-home-promo.png"
               alt="UAE Golden Visa card — 10-year residency, UAE emblem, and Dubai skyline graphic"
-              width={900}
-              height={675}
+              width={1920}
+              height={1440}
               className="h-auto w-full max-w-md object-contain lg:max-w-lg"
-              sizes="(max-width: 1024px) 100vw, 448px"
+              sizes="(max-width: 1023px) min(100vw - 2rem, 640px), min(42rem, 50vw)"
+              quality={92}
               priority={false}
             />
           </div>
