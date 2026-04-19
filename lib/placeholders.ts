@@ -5,10 +5,10 @@ export const images = {
     src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2400&q=85",
     alt: "Dubai skyline at dusk with modern towers reflecting golden light",
   },
-  /** Home page hero — Dubai downtown panorama at night with Burj Khalifa and highways. */
+  /** Home page hero — Dubai skyline at golden hour with Burj Khalifa and city lights. */
   homeHero: {
     src: "/home-hero.png",
-    alt: "Panoramic view of downtown Dubai at night with Burj Khalifa, towers, and illuminated highways",
+    alt: "Wide panoramic view of Dubai skyline at sunset with Burj Khalifa, towers, and highways in golden light",
   },
   villa: {
     src: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=85",
