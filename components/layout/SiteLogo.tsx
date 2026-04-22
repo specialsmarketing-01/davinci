@@ -6,11 +6,13 @@ type Props = {
   /** Use on dark backgrounds (e.g. footer): lightens typical dark logos for contrast */
   forDarkBackground?: boolean;
   className?: string;
+  /** Merged onto the logo `<Image>` (e.g. footer max-width). */
+  imageClassName?: string;
   /** When true, parent handles navigation (e.g. mobile menu close) */
   onNavigate?: () => void;
 };
 
-export function SiteLogo({ forDarkBackground = false, className, onNavigate }: Props) {
+export function SiteLogo({ forDarkBackground = false, className, imageClassName, onNavigate }: Props) {
   return (
     <Link
       href="/"
@@ -26,6 +28,7 @@ export function SiteLogo({ forDarkBackground = false, className, onNavigate }: P
         className={cn(
           "h-[2.8rem] w-auto sm:h-[3.15rem]",
           forDarkBackground && "brightness-0 invert",
+          imageClassName,
         )}
         sizes="(max-width: 640px) 224px, 280px"
       />

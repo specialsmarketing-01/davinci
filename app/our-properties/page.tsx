@@ -1,9 +1,7 @@
-import { PropertyListingGrid } from "@/components/properties/PropertyListingGrid";
-import { CTA } from "@/components/sections/CTA";
+import { GetInTouchLeadForm } from "@/components/sections/GetInTouchLeadForm";
 import { PageHero } from "@/components/sections/PageHero";
 import { buildPageMetadata } from "@/lib/seo";
 import { images } from "@/lib/placeholders";
-import { listPropertiesForGrid } from "@/lib/properties-data";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -15,8 +13,6 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function OurPropertiesPage() {
-  const items = listPropertiesForGrid();
-
   return (
     <main id="main-content" className="flex-1">
       <PageHero
@@ -62,39 +58,24 @@ export default function OurPropertiesPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-zinc-50 py-16 sm:py-20" aria-labelledby="listings-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Spotlight</p>
-            <h2
-              id="listings-heading"
-              className="mt-3 text-3xl font-light sm:text-4xl"
-            >
-              Featured listings
+      <section className="border-t border-border bg-zinc-50 py-16 sm:py-20" aria-labelledby="lead-form-heading">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-border bg-white p-6 sm:p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Enquiry</p>
+            <h2 id="lead-form-heading" className="mt-3 text-3xl font-light sm:text-4xl">
+              Share your property brief
             </h2>
             <p className="mt-4 text-muted">
-              A snapshot of inventory we are actively supporting. For a tailored shortlist, tell us your
-              budget band and preferred communities on the{" "}
-              <Link className="font-semibold text-foreground underline-offset-4 hover:underline" href="/contact/">
-                contact page
-              </Link>
-              .
+              Tell us your budget, preferred communities, and timeline. We will send tailored options
+              and next steps.
             </p>
-          </div>
-          <div className="mt-12">
-            <PropertyListingGrid items={items} />
+            <div className="mt-8">
+              <GetInTouchLeadForm />
+            </div>
           </div>
         </div>
       </section>
 
-      <CTA
-        title="Want inventory aligned to your brief?"
-        description="We will filter by handover timeline, payment plan, and community fit—then walk you through comparables before you commit."
-        primaryHref="/contact/"
-        primaryLabel="Talk to a consultant"
-        secondaryHref="/services/"
-        secondaryLabel="Explore services"
-      />
     </main>
   );
 }

@@ -1,49 +1,58 @@
 import { SiteLogo } from "@/components/layout/SiteLogo";
-import { contact, siteName } from "@/lib/site";
+import { contact } from "@/lib/site";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
-const useful = [
+const featuredProperties = [
+  { label: "Luxury Projects", href: "/our-properties/" },
+  { label: "Off Plan Projects", href: "/damac-lagoons/" },
+  { label: "Sell Property", href: "/our-properties/sell/" },
+  { label: "Rent Property", href: "/rent/" },
+] as const;
+
+const usefulLinks = [
   { label: "About Davinci", href: "/about-davinci/" },
-  { label: "Services", href: "/services/" },
+  { label: "Our Services", href: "/services/" },
+  { label: "Careers", href: "/contact/" },
   { label: "Privacy Policy", href: "/privacy-policy/" },
-  { label: "Terms & Conditions", href: "/terms-and-conditions/" },
+  { label: "Terms of Services", href: "/terms-and-conditions/" },
 ] as const;
 
-const featured = [
-  { label: "Buy", href: "/our-properties/" },
-  { label: "Rent", href: "/rent/" },
-  { label: "Sell", href: "/our-properties/sell/" },
-  { label: "List your property", href: "/our-properties/list-your-property/" },
-] as const;
-
-const social = [
-  { label: "Instagram", href: "https://www.instagram.com" },
-  { label: "LinkedIn", href: "https://www.linkedin.com" },
-  { label: "Facebook", href: "https://www.facebook.com" },
-] as const;
+function ColumnTitle({ children }: { children: ReactNode }) {
+  return (
+    <>
+      <p className="text-sm font-normal text-white">{children}</p>
+      <div className="mt-2 h-px w-full bg-white" aria-hidden />
+    </>
+  );
+}
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const officeStreet = contact.addressLines[1];
+  const [emailLocal, emailHost] = contact.email.split("@");
+  const emailDisplay =
+    emailLocal && emailHost
+      ? `${emailLocal.charAt(0).toUpperCase()}${emailLocal.slice(1)}@${emailHost}`
+      : contact.email;
 
   return (
-    <footer className="border-t border-border bg-black text-zinc-100">
+    <footer className="border-t border-border bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div>
-            <SiteLogo forDarkBackground className="[&_img]:h-14 sm:[&_img]:h-[3.85rem]" />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-zinc-400">
-              A Dubai-focused real estate advisory helping clients acquire, lease, and monetize
-              exceptional homes and investment assets with transparency and care.
-            </p>
+            <SiteLogo
+              imageClassName="!h-auto max-h-[3.75rem] w-auto max-w-[min(100%,240px)] sm:max-h-[3.85rem] sm:max-w-[260px]"
+            />
           </div>
-          <nav aria-label="Featured links">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Featured</p>
+
+          <nav aria-label="Featured properties">
+            <ColumnTitle>Featured Properties</ColumnTitle>
             <ul className="mt-4 space-y-2">
-              {featured.map((item) => (
+              {featuredProperties.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-zinc-300 transition hover:text-accent-on-dark"
+                    className="text-sm text-white transition hover:text-accent-on-dark"
                   >
                     {item.label}
                   </Link>
@@ -51,14 +60,15 @@ export function Footer() {
               ))}
             </ul>
           </nav>
+
           <nav aria-label="Useful links">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Useful links</p>
+            <ColumnTitle>Useful Links</ColumnTitle>
             <ul className="mt-4 space-y-2">
-              {useful.map((item) => (
+              {usefulLinks.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-zinc-300 transition hover:text-accent-on-dark"
+                    className="text-sm text-white transition hover:text-accent-on-dark"
                   >
                     {item.label}
                   </Link>
@@ -66,44 +76,28 @@ export function Footer() {
               ))}
             </ul>
           </nav>
+
           <address className="not-italic">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Contact</p>
-            <div className="mt-4 space-y-1.5 text-sm leading-relaxed text-zinc-300">
-              {contact.addressLines.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
+            <ColumnTitle>Contact Info</ColumnTitle>
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-white">
+              <p>
+                <span className="font-medium">Office: </span>
+                Office — {officeStreet}
+              </p>
+              <p>
+                <span className="font-medium">Hotline: </span>
+                <a className="hover:text-accent-on-dark hover:underline" href={contact.phoneHref}>
+                  {contact.phone}
+                </a>
+              </p>
+              <p>
+                <span className="font-medium">Email: </span>
+                <a className="hover:text-accent-on-dark hover:underline" href={contact.emailHref}>
+                  {emailDisplay}
+                </a>
+              </p>
             </div>
-            <p className="mt-3">
-              <a className="text-sm text-accent-on-dark hover:underline" href={contact.phoneHref}>
-                {contact.phone}
-              </a>
-            </p>
-            <p className="mt-2">
-              <a className="text-sm text-zinc-300 hover:text-white" href={contact.emailHref}>
-                {contact.email}
-              </a>
-            </p>
-            <ul className="mt-6 flex flex-wrap gap-4">
-              {social.map((s) => (
-                <li key={s.href}>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-semibold uppercase tracking-wider text-zinc-400 transition hover:text-accent-on-dark"
-                  >
-                    {s.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </address>
-        </div>
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {year} {siteName}. All rights reserved.
-          </p>
-          <p className="text-zinc-600">Licensed real estate marketing &amp; advisory services.</p>
         </div>
       </div>
     </footer>
