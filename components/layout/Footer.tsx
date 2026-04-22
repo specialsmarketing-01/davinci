@@ -99,6 +99,9 @@ export function Footer() {
             </div>
           </address>
         </div>
+        <p className="mt-10 border-t border-white/15 pt-5 text-center text-xs text-white/70">
+          Copyright 2023. All rights reserved.
+        </p>
       </div>
     </footer>
   );

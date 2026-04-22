@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { CookieConsent } from "@/components/compliance/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { RequestCallbackTab } from "@/components/layout/RequestCallbackTab";
@@ -59,6 +60,7 @@ export default function RootLayout({
         <Navbar />
         <div className="flex flex-1 flex-col">{children}</div>
         <RequestCallbackTab />
+        <CookieConsent />
         <Footer />
       </body>
     </html>
