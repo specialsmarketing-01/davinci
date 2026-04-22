@@ -1,6 +1,7 @@
 import { getServiceBySlug, services } from "@/lib/services-data";
 import { PageHero } from "@/components/sections/PageHero";
-import { contact, seoKeywords, siteName } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
+import { contact } from "@/lib/site";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -21,19 +22,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
   const title = service.metaTitle ?? service.title;
   const description = service.metaDescription ?? service.summary;
-  return {
+  return buildPageMetadata({
     title,
     description,
-    keywords: [...seoKeywords],
-    openGraph: {
-      title: `${title} | ${siteName}`,
-      description,
-      url: `/services/${service.slug}/`,
-    },
-    alternates: {
-      canonical: `/services/${service.slug}/`,
-    },
-  };
+    path: `/services/${service.slug}/`,
+    image: service.legacyContent?.heroBackground,
+  });
 }
 
 export default async function ServiceDetailPage({ params }: Props) {

@@ -68,6 +68,21 @@ body {
   animation-delay: 0.3s;
 }
 
+@keyframes hero-title-float {
+  from {
+    transform: translateY(0);
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0.35);
+  }
+  to {
+    transform: translateY(-4px);
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.animate-hero-title {
+  animation: fade-up 0.8s ease-out both, hero-title-float 2.8s ease-in-out 0.9s infinite alternate;
+}
+
 @keyframes partner-marquee {
   from {
     transform: translate3d(0, 0, 0);
@@ -83,7 +98,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-partner-marquee {
+  .animate-partner-marquee,
+  .animate-hero-title {
     animation: none;
     will-change: auto;
   }

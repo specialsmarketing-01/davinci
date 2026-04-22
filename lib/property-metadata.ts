@@ -11,5 +11,6 @@ export function buildPropertyMetadata(slug: string, canonicalPath: string): Meta
     title: p.title,
     description: p.summary,
     path: canonicalPath,
+    image: p.hero,
   });
 }

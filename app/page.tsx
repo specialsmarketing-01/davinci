@@ -6,22 +6,19 @@ import { AboutDavinciSplitSection } from "@/components/sections/AboutDavinciSpli
 import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { GoldenVisaHomeSection } from "@/components/sections/GoldenVisaHomeSection";
 import { OfficeMapSection } from "@/components/sections/OfficeMapSection";
-import { seoKeywords, siteDescription, siteName } from "@/lib/site";
+import { buildPageMetadata } from "@/lib/seo";
+import { siteDescription } from "@/lib/site";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Luxury Dubai Real Estate & Property Advisory",
-  description: `${siteDescription} Explore ${seoKeywords.join(", ")} with a trusted partner.`,
-  keywords: [...seoKeywords],
-  openGraph: {
-    title: `Luxury Dubai Real Estate & Property Advisory | ${siteName}`,
-    description: siteDescription,
-    url: "/",
+  description: `${siteDescription} Browse properties, services, and market-ready guidance in Dubai.`,
+  path: "/",
+  image: {
+    src: "/home-hero.png",
+    alt: "Luxury property and skyline themes from Davinci Properties Dubai",
   },
-  alternates: {
-    canonical: "/",
-  },
-};
+});
 
 export default function HomePage() {
   return (
