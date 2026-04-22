@@ -29,7 +29,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative isolate min-h-[75svh] overflow-hidden"
+      className="relative isolate -mt-16 min-h-[75svh] overflow-hidden"
       aria-label="Davinci Properties — Dubai real estate"
     >
       <div className="absolute inset-0">

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { propertiesMenu, servicesMenu } from "@/lib/navigation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -27,6 +27,8 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobilePropsOpen, setMobilePropsOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
 
   const closeMobile = () => {
     setMobileOpen(false);
@@ -43,11 +45,35 @@ export function Navbar() {
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      const current = window.scrollY;
+
+      if (mobileOpen || current < 8) {
+        setHeaderVisible(true);
+        lastScrollY.current = current;
+        return;
+      }
+
+      const scrollingDown = current > lastScrollY.current;
+      const delta = Math.abs(current - lastScrollY.current);
+
+      if (delta > 6) {
+        setHeaderVisible(!scrollingDown);
+        lastScrollY.current = current;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [mobileOpen]);
+
   const navLink =
-    "text-sm font-medium tracking-wide text-foreground/90 transition-colors hover:text-foreground";
+    "text-sm font-medium tracking-wide transition-colors";
 
   const normalizedPath = pathname.replace(/\/$/, "") || "/";
   const aboutExact = normalizedPath === "/about-davinci";
+  const isHome = normalizedPath === "/";
 
   const isActive = (href: string) => {
     const current = normalizedPath;
@@ -57,14 +83,27 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background shadow-sm">
+    <header
+      className={cn(
+        "sticky top-0 z-50 transition-transform duration-300 ease-out",
+        headerVisible ? "translate-y-0" : "-translate-y-full",
+        isHome
+          ? "border-0 bg-transparent shadow-none"
+          : "border-b border-border/80 bg-background shadow-sm",
+      )}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
         <SiteLogo onNavigate={closeMobile} className="min-w-0 shrink" />
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
           <Link
             href="/"
-            className={cn(navLink, "rounded-md px-3 py-2", isActive("/") && "text-foreground")}
+            className={cn(
+              navLink,
+              "rounded-md px-3 py-2",
+              isHome ? "text-white/90 hover:text-white" : "text-foreground/90 hover:text-foreground",
+              isActive("/") && (isHome ? "text-white" : "text-foreground"),
+            )}
           >
             Home
           </Link>
@@ -75,7 +114,8 @@ export function Navbar() {
               className={cn(
                 navLink,
                 "inline-flex items-center gap-1 rounded-md px-3 py-2",
-                pathname.startsWith("/our-properties") && "text-foreground",
+                isHome ? "text-white/90 hover:text-white" : "text-foreground/90 hover:text-foreground",
+                pathname.startsWith("/our-properties") && (isHome ? "text-white" : "text-foreground"),
               )}
               aria-expanded="false"
               aria-haspopup="true"
@@ -107,7 +147,8 @@ export function Navbar() {
               className={cn(
                 navLink,
                 "inline-flex items-center gap-1 rounded-md px-3 py-2",
-                pathname.startsWith("/services") && "text-foreground",
+                isHome ? "text-white/90 hover:text-white" : "text-foreground/90 hover:text-foreground",
+                pathname.startsWith("/services") && (isHome ? "text-white" : "text-foreground"),
               )}
             >
               Services
@@ -133,13 +174,23 @@ export function Navbar() {
 
           <Link
             href="/about-davinci/"
-            className={cn(navLink, "rounded-md px-3 py-2", aboutExact && "text-foreground")}
+            className={cn(
+              navLink,
+              "rounded-md px-3 py-2",
+              isHome ? "text-white/90 hover:text-white" : "text-foreground/90 hover:text-foreground",
+              aboutExact && (isHome ? "text-white" : "text-foreground"),
+            )}
           >
             About
           </Link>
           <Link
             href="/contact/"
-            className={cn(navLink, "rounded-md px-3 py-2", isActive("/contact/") && "text-foreground")}
+            className={cn(
+              navLink,
+              "rounded-md px-3 py-2",
+              isHome ? "text-white/90 hover:text-white" : "text-foreground/90 hover:text-foreground",
+              isActive("/contact/") && (isHome ? "text-white" : "text-foreground"),
+            )}
           >
             Contact
           </Link>
@@ -148,7 +199,10 @@ export function Navbar() {
         <div className="flex items-center">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md border border-border p-2 lg:hidden"
+            className={cn(
+              "inline-flex items-center justify-center rounded-md border p-2 lg:hidden",
+              isHome ? "border-white/40 text-white" : "border-border",
+            )}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
             onClick={() => setMobileOpen((v) => !v)}
