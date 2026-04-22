@@ -63,11 +63,7 @@ export function Hero() {
           aria-hidden
         />
       </div>
-      <div className="relative mx-auto flex min-h-[75svh] max-w-7xl items-end px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <h1 className="animate-hero-title max-w-3xl text-4xl font-light leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Real Estate Dubai
-        </h1>
-      </div>
+      <h1 className="sr-only">Davinci Properties — luxury Dubai real estate</h1>
     </section>
   );
 }
