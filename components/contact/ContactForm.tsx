@@ -1,14 +1,35 @@
 "use client";
 
 import { contact } from "@/lib/site";
+import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setSending(true);
+    setError(null);
+
+    try {
+      await submitLead("contact", {
+        name: String(data.get("name") ?? ""),
+        email: String(data.get("email") ?? ""),
+        interest: String(data.get("interest") ?? ""),
+        message: String(data.get("message") ?? ""),
+      });
+      setSent(true);
+      form.reset();
+    } catch {
+      setError("We could not send your message. Please email us directly.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -81,13 +102,19 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
+        disabled={sending}
         className="w-full rounded-full bg-foreground py-3 text-sm font-semibold text-background transition hover:bg-foreground/90 sm:w-auto sm:px-10"
       >
-        Send message
+        {sending ? "Sending..." : "Send message"}
       </button>
+      {error && (
+        <p className="text-sm text-red-700" role="alert">
+          {error}
+        </p>
+      )}
       {sent && (
         <p className="text-sm text-muted" role="status">
-          Thanks—this demo form does not transmit data. For a real enquiry, email{" "}
+          Thanks. We have received your enquiry. You can also email{" "}
           <a className="font-medium text-foreground underline" href={contact.emailHref}>
             {contact.email}
           </a>{" "}

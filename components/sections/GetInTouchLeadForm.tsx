@@ -1,19 +1,39 @@
 "use client";
 
+import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function GetInTouchLeadForm() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setSending(true);
+    setError(null);
+
+    try {
+      await submitLead("get_in_touch", {
+        name: String(data.get("name") ?? ""),
+        phone: String(data.get("phone") ?? ""),
+        email: String(data.get("email") ?? ""),
+      });
+      setSent(true);
+      form.reset();
+    } catch {
+      setError("We could not submit your request right now.");
+    } finally {
+      setSending(false);
+    }
   }
 
   if (sent) {
     return (
       <p className="text-sm leading-relaxed text-muted" role="status">
-        Thank you—we will reach out with curated listings and updates.
+        Thank you. We have received your request and will contact you shortly.
       </p>
     );
   }
@@ -72,10 +92,16 @@ export function GetInTouchLeadForm() {
       </div>
       <button
         type="submit"
+        disabled={sending}
         className="w-full bg-foreground py-3.5 text-sm font-medium uppercase tracking-[0.2em] text-background transition hover:bg-foreground/90"
       >
-        Subscribe
+        {sending ? "Sending..." : "Subscribe"}
       </button>
+      {error && (
+        <p className="text-sm text-red-700" role="alert">
+          {error}
+        </p>
+      )}
     </form>
   );
 }

@@ -1,14 +1,36 @@
 "use client";
 
 import { contact } from "@/lib/site";
+import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function SellPropertyLeadSection() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setSending(true);
+    setError(null);
+
+    try {
+      await submitLead("sell_property", {
+        name: String(data.get("name") ?? ""),
+        email: String(data.get("email") ?? ""),
+        phone: String(data.get("phone") ?? ""),
+        interest: String(data.get("interest") ?? ""),
+        message: String(data.get("message") ?? ""),
+      });
+      setSent(true);
+      form.reset();
+    } catch {
+      setError("We could not send your message. Please email us directly.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -127,14 +149,20 @@ export function SellPropertyLeadSection() {
               <div className="pt-1">
                 <button
                   type="submit"
+                  disabled={sending}
                   className="rounded-md bg-accent px-10 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-accent/90"
                 >
-                  Send
+                  {sending ? "Sending..." : "Send"}
                 </button>
               </div>
+              {error && (
+                <p className="text-sm text-red-700" role="alert">
+                  {error}
+                </p>
+              )}
               {sent && (
                 <p className="text-sm text-muted" role="status">
-                  Thanks—this demo form does not transmit data. Email{" "}
+                  Thanks. We have received your enquiry. You can also email{" "}
                   <a className="font-medium text-foreground underline" href={contact.emailHref}>
                     {contact.email}
                   </a>{" "}

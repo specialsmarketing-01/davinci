@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/rent/",
     "/damac-lagoons/",
     "/v1ter-residence-for-sale-in-jumeirah-village-circle-jvc-dubai/",
+    "/binghatti/",
     "/services/",
     "/about-davinci/",
     "/contact/",

@@ -21,8 +21,8 @@ export const contact = {
   /** Same number as `phone`, formatted for display. */
   phoneDisplay: "+971 (52) 772 9114",
   phoneHref: "tel:+971527729114",
-  email: "info@davinci-properties.com",
-  emailHref: "mailto:info@davinci-properties.com",
+  email: "office@davinci-properties.com",
+  emailHref: "mailto:office@davinci-properties.com",
   addressLines: officeAddressLines,
   officeHours: {
     lines: ["Mon - Fri:", "10 AM - 6 PM"] as const,
