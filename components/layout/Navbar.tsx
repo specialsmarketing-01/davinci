@@ -1,11 +1,26 @@
 "use client";
 
 import { SiteLogo } from "@/components/layout/SiteLogo";
+import { NavbarLanguageSwitch } from "@/components/layout/NavbarLanguageSwitch";
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { cn } from "@/lib/utils";
 import { propertiesMenu, servicesMenu } from "@/lib/navigation";
+import type { NavTranslations } from "@/lib/i18n/nav";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+
+function submenuLabel<
+  K extends keyof NavTranslations & ("properties" | "serviceItems"),
+>(
+  translations: NavTranslations[K],
+  href: string,
+  fallback: string,
+): string {
+  const key = href.endsWith("/") ? href : `${href}/`;
+  const label = translations[key as keyof NavTranslations[K]] as string | undefined;
+  return label ?? fallback;
+}
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -23,6 +38,7 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 export function Navbar() {
+  const { t } = useNavLocale();
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobilePropsOpen, setMobilePropsOpen] = useState(false);
@@ -95,7 +111,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
         <SiteLogo onNavigate={closeMobile} className="min-w-0 shrink" />
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label={t.primaryNav}>
           <Link
             href="/"
             className={cn(
@@ -105,7 +121,7 @@ export function Navbar() {
               isActive("/") && (isHome ? "text-white" : "text-foreground"),
             )}
           >
-            Home
+            {t.home}
           </Link>
 
           <div className="group relative">
@@ -120,10 +136,10 @@ export function Navbar() {
               aria-expanded="false"
               aria-haspopup="true"
             >
-              Our Properties
+              {t.ourProperties}
               <Chevron open={false} />
             </button>
-            <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute start-0 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="min-w-[240px] rounded-lg border border-border bg-background py-2 shadow-xl">
                 <ul className="flex flex-col">
                   {propertiesMenu.map((item) => (
@@ -132,7 +148,7 @@ export function Navbar() {
                         href={item.href}
                         className="block px-4 py-2.5 text-sm text-foreground/85 transition-colors hover:bg-black/[0.03] hover:text-foreground"
                       >
-                        {item.label}
+                        {submenuLabel(t.properties, item.href, item.label)}
                       </Link>
                     </li>
                   ))}
@@ -151,10 +167,10 @@ export function Navbar() {
                 pathname.startsWith("/services") && (isHome ? "text-white" : "text-foreground"),
               )}
             >
-              Services
+              {t.services}
               <Chevron open={false} />
             </button>
-            <div className="invisible absolute left-0 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute start-0 top-full z-50 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
               <div className="min-w-[280px] rounded-lg border border-border bg-background py-2 shadow-xl">
                 <ul className="flex flex-col">
                   {servicesMenu.map((item) => (
@@ -163,7 +179,7 @@ export function Navbar() {
                         href={item.href}
                         className="block px-4 py-2.5 text-sm text-foreground/85 transition-colors hover:bg-black/[0.03] hover:text-foreground"
                       >
-                        {item.label}
+                        {submenuLabel(t.serviceItems, item.href, item.label)}
                       </Link>
                     </li>
                   ))}
@@ -181,7 +197,7 @@ export function Navbar() {
               aboutExact && (isHome ? "text-white" : "text-foreground"),
             )}
           >
-            About
+            {t.about}
           </Link>
           <Link
             href="/contact/"
@@ -192,11 +208,12 @@ export function Navbar() {
               isActive("/contact/") && (isHome ? "text-white" : "text-foreground"),
             )}
           >
-            Contact
+            {t.contact}
           </Link>
         </nav>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-2">
+          <NavbarLanguageSwitch isHome={isHome} />
           <button
             type="button"
             className={cn(
@@ -207,7 +224,7 @@ export function Navbar() {
             aria-controls="mobile-menu"
             onClick={() => setMobileOpen((v) => !v)}
           >
-            <span className="sr-only">Toggle menu</span>
+            <span className="sr-only">{t.toggleMenu}</span>
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {mobileOpen ? <path d="M6 18L18 6M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
             </svg>
@@ -224,14 +241,14 @@ export function Navbar() {
         >
           <div className="mx-auto max-w-7xl space-y-1 px-4 py-4">
             <Link href="/" className="block rounded-md px-3 py-3 text-base font-medium" onClick={closeMobile}>
-              Home
+              {t.home}
             </Link>
             <button
               type="button"
               className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-base font-medium"
               onClick={() => setMobilePropsOpen((v) => !v)}
             >
-              Our Properties
+              {t.ourProperties}
               <Chevron open={mobilePropsOpen} />
             </button>
             {mobilePropsOpen && (
@@ -243,7 +260,7 @@ export function Navbar() {
                       className="block py-2 text-sm text-foreground/85"
                       onClick={closeMobile}
                     >
-                      {item.label}
+                      {submenuLabel(t.properties, item.href, item.label)}
                     </Link>
                   </li>
                 ))}
@@ -254,7 +271,7 @@ export function Navbar() {
               className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-base font-medium"
               onClick={() => setMobileServicesOpen((v) => !v)}
             >
-              Services
+              {t.services}
               <Chevron open={mobileServicesOpen} />
             </button>
             {mobileServicesOpen && (
@@ -266,7 +283,7 @@ export function Navbar() {
                       className="block py-2 text-sm text-foreground/85"
                       onClick={closeMobile}
                     >
-                      {item.label}
+                      {submenuLabel(t.serviceItems, item.href, item.label)}
                     </Link>
                   </li>
                 ))}
@@ -277,10 +294,10 @@ export function Navbar() {
               className="block rounded-md px-3 py-3 text-base font-medium"
               onClick={closeMobile}
             >
-              About
+              {t.about}
             </Link>
             <Link href="/contact/" className="block rounded-md px-3 py-3 text-base font-medium" onClick={closeMobile}>
-              Contact
+              {t.contact}
             </Link>
           </div>
         </div>

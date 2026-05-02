@@ -38,7 +38,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-family: var(--font-poppins), var(--font-noto-sans), var(--font-tajawal), system-ui, sans-serif;
 }
 
 @keyframes fade-up {

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Noto_Sans, Poppins, Tajawal } from "next/font/google";
 import { CookieConsent } from "@/components/compliance/CookieConsent";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { RequestCallbackTab } from "@/components/layout/RequestCallbackTab";
+import { SkipNavLink } from "@/components/layout/SkipNavLink";
 import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
+import { LocaleProvider } from "@/components/providers/LocaleProvider";
 import { seoKeywords, siteDescription, siteName } from "@/lib/site";
 import "./globals.css";
 
@@ -12,6 +14,21 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  subsets: ["latin", "cyrillic", "cyrillic-ext"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+/** Arabic UI text in the navbar/fallback glyphs */
+const tajawal = Tajawal({
+  variable: "--font-tajawal",
+  subsets: ["arabic"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -48,20 +65,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full`}>
+    <html lang="en" className={`${poppins.variable} ${notoSans.variable} ${tajawal.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased bg-background text-foreground">
         <OrganizationJsonLd />
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
-        >
-          Skip to main content
-        </a>
-        <Navbar />
-        <div className="flex flex-1 flex-col">{children}</div>
-        <RequestCallbackTab />
-        <CookieConsent />
-        <Footer />
+        <LocaleProvider>
+          <SkipNavLink />
+          <Navbar />
+          <div className="flex flex-1 flex-col">{children}</div>
+          <RequestCallbackTab />
+          <CookieConsent />
+          <Footer />
+        </LocaleProvider>
       </body>
     </html>
   );
