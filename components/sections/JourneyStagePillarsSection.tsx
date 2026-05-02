@@ -1,6 +1,11 @@
-import { journeyStagePillars } from "@/lib/home-data";
+"use client";
+
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 
 export function JourneyStagePillarsSection() {
+  const { site } = useNavLocale();
+  const pillars = site.home.journeyPillars;
+
   return (
     <section
       className="bg-black text-white"
@@ -11,11 +16,11 @@ export function JourneyStagePillarsSection() {
           id="journey-pillars-heading"
           className="mx-auto max-w-3xl text-center text-3xl font-light leading-tight tracking-tight sm:text-4xl"
         >
-          Guidance for every stage of your property journey
+          {site.home.journeyHeading}
         </h2>
 
         <div className="mt-14 grid gap-12 sm:grid-cols-2 sm:gap-10 lg:mt-16 lg:grid-cols-4 lg:gap-8">
-          {journeyStagePillars.map((item) => (
+          {pillars.map((item) => (
             <div key={item.step} className="flex flex-col items-start text-left">
               <div className="flex w-full items-center gap-3">
                 <span className="shrink-0 text-4xl font-light tabular-nums tracking-tight text-white sm:text-[2.5rem]">

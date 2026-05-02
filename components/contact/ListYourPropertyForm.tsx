@@ -1,10 +1,14 @@
 "use client";
 
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { contact } from "@/lib/site";
 import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function ListYourPropertyForm() {
+  const { site } = useNavLocale();
+  const lf = site.listPropertyForm;
+  const ft = site.formThanks;
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -26,7 +30,7 @@ export function ListYourPropertyForm() {
       setSent(true);
       form.reset();
     } catch {
-      setError("We could not send your message. Please email us directly.");
+      setError(lf.error);
     } finally {
       setSending(false);
     }
@@ -42,7 +46,7 @@ export function ListYourPropertyForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="lyp-name" className="text-sm font-medium text-foreground">
-            Full name
+            {lf.fullName}
           </label>
           <input
             id="lyp-name"
@@ -51,12 +55,12 @@ export function ListYourPropertyForm() {
             autoComplete="name"
             required
             className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-            placeholder="Your name"
+            placeholder={lf.placeholders.name}
           />
         </div>
         <div>
           <label htmlFor="lyp-email" className="text-sm font-medium text-foreground">
-            Email
+            {lf.email}
           </label>
           <input
             id="lyp-email"
@@ -65,13 +69,13 @@ export function ListYourPropertyForm() {
             autoComplete="email"
             required
             className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-            placeholder="you@company.com"
+            placeholder={lf.placeholders.email}
           />
         </div>
       </div>
       <div>
         <label htmlFor="lyp-interest" className="text-sm font-medium text-foreground">
-          What Are You Interested In?
+          {lf.interestLabel}
         </label>
         <select
           id="lyp-interest"
@@ -81,25 +85,25 @@ export function ListYourPropertyForm() {
           required
         >
           <option value="" disabled>
-            Select an option
+            {lf.placeholderOption}
           </option>
-          <option value="buying">Buying</option>
-          <option value="selling">Selling</option>
-          <option value="area-information">Area Information</option>
-          <option value="home-valuation">Home Valuation</option>
-          <option value="other">Other</option>
+          <option value="buying">{lf.buying}</option>
+          <option value="selling">{lf.selling}</option>
+          <option value="area-information">{lf.areaInformation}</option>
+          <option value="home-valuation">{lf.homeValuation}</option>
+          <option value="other">{lf.other}</option>
         </select>
       </div>
       <div>
         <label htmlFor="lyp-message" className="text-sm font-medium text-foreground">
-          Message
+          {lf.message}
         </label>
         <textarea
           id="lyp-message"
           name="message"
           rows={5}
           className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-          placeholder="Tell us about your property, timeline, and how we can help."
+          placeholder={lf.placeholders.message}
         />
       </div>
       <button
@@ -107,7 +111,7 @@ export function ListYourPropertyForm() {
         disabled={sending}
         className="w-full rounded-full bg-foreground py-3 text-sm font-semibold text-background transition hover:bg-foreground/90 sm:w-auto sm:px-10"
       >
-        {sending ? "Sending..." : "Send message"}
+        {sending ? lf.sending : lf.submit}
       </button>
       {error && (
         <p className="text-sm text-red-700" role="alert">
@@ -116,11 +120,12 @@ export function ListYourPropertyForm() {
       )}
       {sent && (
         <p className="text-sm text-muted" role="status">
-          Thanks. We have received your enquiry. You can also email{" "}
+          {ft.received}{" "}
+          {ft.alsoEmail}{" "}
           <a className="font-medium text-foreground underline" href={contact.emailHref}>
             {contact.email}
           </a>{" "}
-          or call{" "}
+          {ft.orCall}{" "}
           <a className="font-medium text-foreground underline" href={contact.phoneHref}>
             {contact.phone}
           </a>

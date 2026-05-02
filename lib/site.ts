@@ -21,6 +21,8 @@ export const contact = {
   /** Same number as `phone`, formatted for display. */
   phoneDisplay: "+971 (52) 772 9114",
   phoneHref: "tel:+971527729114",
+  /** Opens WhatsApp chat for the same mobile number as `phoneHref`. */
+  whatsappHref: "https://wa.me/971527729114",
   email: "office@davinci-properties.com",
   emailHref: "mailto:office@davinci-properties.com",
   addressLines: officeAddressLines,

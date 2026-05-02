@@ -1,7 +1,13 @@
-import Link from "next/link";
+"use client";
+
 import { GetInTouchLeadForm } from "@/components/sections/GetInTouchLeadForm";
+import { useNavLocale } from "@/components/providers/LocaleProvider";
+import Link from "next/link";
 
 export function ExclusiveListingsLeadSection() {
+  const { site } = useNavLocale();
+  const h = site.home;
+
   return (
     <section
       className="border-b border-border bg-white"
@@ -9,7 +15,7 @@ export function ExclusiveListingsLeadSection() {
     >
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <p className="text-center text-xs font-medium uppercase tracking-[0.45em] text-accent sm:text-sm">
-          Luxury
+          {h.exclusiveKicker}
         </p>
 
         <div className="mt-12 grid items-start gap-14 lg:mt-16 lg:grid-cols-2 lg:gap-20">
@@ -18,19 +24,17 @@ export function ExclusiveListingsLeadSection() {
               id="exclusive-lead-heading"
               className="text-3xl font-light leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.5rem]"
             >
-              Exclusive property listings
+              {h.exclusiveHeading}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted sm:text-lg">
-              Discover curated homes, apartments, and villas in Dubai&apos;s most sought-after
-              communities. With discreet advisory and meticulous follow-through, finding your next
-              residence or investment stays calm and efficient.
+              {h.exclusiveBody}
             </p>
             <div className="mt-10 flex justify-center">
               <Link
                 href="/our-properties/"
                 className="inline-flex min-w-[12rem] items-center justify-center bg-foreground px-10 py-3.5 text-sm font-semibold text-accent transition hover:bg-foreground/90"
               >
-                View exclusives
+                {h.exclusiveCta}
               </Link>
             </div>
           </div>

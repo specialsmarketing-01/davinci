@@ -1,5 +1,6 @@
 "use client";
 
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
@@ -19,6 +20,8 @@ function savePreferences(preferences: CookiePreferences) {
 }
 
 export function CookieConsent() {
+  const { site } = useNavLocale();
+  const c = site.cookie;
   const [visible, setVisible] = useState(false);
   const [customizeOpen, setCustomizeOpen] = useState(false);
   const [functional, setFunctional] = useState(false);
@@ -79,22 +82,18 @@ export function CookieConsent() {
       className="fixed inset-x-3 bottom-3 z-[90] rounded-xl border border-border bg-white p-4 shadow-xl sm:inset-x-6 sm:bottom-6 sm:p-5 lg:mx-auto lg:max-w-3xl"
       role="dialog"
       aria-live="polite"
-      aria-label="Cookie preferences"
+      aria-label={c.ariaLabel}
     >
-      <p className="text-sm font-semibold text-foreground">Cookie preferences</p>
-      <p className="mt-2 text-sm leading-relaxed text-muted">
-        We use essential cookies to run the site. Optional cookies help us improve performance and
-        marketing. You can accept all, reject optional, or set your preferences in line with UAE data
-        protection expectations.
-      </p>
+      <p className="text-sm font-semibold text-foreground">{c.heading}</p>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{c.body}</p>
       <p className="mt-2 text-xs text-muted">
-        Review our{" "}
+        {c.privacyPrefix}{" "}
         <Link className="underline hover:text-foreground" href="/privacy-policy/">
-          Privacy Policy
+          {c.privacyPolicy}
         </Link>{" "}
-        and{" "}
+        {c.termsMiddle}{" "}
         <Link className="underline hover:text-foreground" href="/terms-and-conditions/">
-          Terms & Conditions
+          {c.termsConditions}
         </Link>
         .
       </p>
@@ -105,14 +104,14 @@ export function CookieConsent() {
           onClick={acceptAll}
           className="rounded-full bg-foreground px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-background"
         >
-          Accept all
+          {c.acceptAll}
         </button>
         <button
           type="button"
           onClick={rejectOptional}
           className="rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-foreground"
         >
-          Reject optional
+          {c.rejectOptional}
         </button>
         <button
           type="button"
@@ -121,7 +120,7 @@ export function CookieConsent() {
           aria-expanded={customizeOpen}
           aria-controls="cookie-customize"
         >
-          Customize
+          {c.customize}
         </button>
       </div>
 
@@ -129,11 +128,11 @@ export function CookieConsent() {
         <div id="cookie-customize" className="mt-4 rounded-lg border border-border bg-zinc-50 p-3">
           <div className="space-y-2 text-sm">
             <label className="flex items-center justify-between gap-4">
-              <span>Essential cookies (always on)</span>
+              <span>{c.essential}</span>
               <input type="checkbox" checked disabled className="h-4 w-4 accent-accent" />
             </label>
             <label className="flex items-center justify-between gap-4">
-              <span>Functional cookies</span>
+              <span>{c.functional}</span>
               <input
                 type="checkbox"
                 checked={functional}
@@ -142,7 +141,7 @@ export function CookieConsent() {
               />
             </label>
             <label className="flex items-center justify-between gap-4">
-              <span>Analytics cookies</span>
+              <span>{c.analytics}</span>
               <input
                 type="checkbox"
                 checked={analytics}
@@ -151,7 +150,7 @@ export function CookieConsent() {
               />
             </label>
             <label className="flex items-center justify-between gap-4">
-              <span>Marketing cookies</span>
+              <span>{c.marketing}</span>
               <input
                 type="checkbox"
                 checked={marketing}
@@ -165,7 +164,7 @@ export function CookieConsent() {
             onClick={saveCustom}
             className="mt-3 rounded-full bg-foreground px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-background"
           >
-            Save preferences
+            {c.savePreferences}
           </button>
         </div>
       ) : null}

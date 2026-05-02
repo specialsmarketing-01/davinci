@@ -1,7 +1,11 @@
+"use client";
+
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { partnerLogos } from "@/lib/home-data";
 import Image from "next/image";
 
 export function PartnerLogosSection() {
+  const { site } = useNavLocale();
   return (
     <section
       className="border-t border-border bg-white py-14 sm:py-16 lg:py-20"
@@ -12,7 +16,7 @@ export function PartnerLogosSection() {
           id="partners-heading"
           className="text-center text-3xl font-light tracking-tight text-foreground sm:text-4xl lg:text-5xl"
         >
-          Partners
+          {site.home.partnersHeading}
         </h2>
         <div className="mx-auto mt-8 h-px max-w-md bg-border sm:max-w-lg" aria-hidden />
 

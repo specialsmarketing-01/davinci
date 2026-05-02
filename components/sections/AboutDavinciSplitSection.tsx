@@ -1,3 +1,6 @@
+"use client";
+
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import Image from "next/image";
 
 const ABOUT_IMAGE_WIDTH = 1024;
@@ -5,6 +8,9 @@ const ABOUT_IMAGE_HEIGHT = 682;
 const ABOUT_IMAGE_SRC = "/about-dubai-night.png?v=3";
 
 export function AboutDavinciSplitSection() {
+  const { site } = useNavLocale();
+  const h = site.home;
+
   return (
     <section
       className="relative z-[1] bg-[#020101f0] py-20 text-white sm:py-24 lg:py-28 xl:py-32"
@@ -17,7 +23,7 @@ export function AboutDavinciSplitSection() {
               <div className="absolute inset-2 flex items-center justify-center sm:inset-3 lg:inset-2">
                 <Image
                   src={ABOUT_IMAGE_SRC}
-                  alt="Dubai skyline at night with illuminated towers"
+                  alt={site.aboutPage.imageAlt}
                   width={ABOUT_IMAGE_WIDTH}
                   height={ABOUT_IMAGE_HEIGHT}
                   className="max-h-full w-auto max-w-full object-contain object-center"
@@ -34,13 +40,10 @@ export function AboutDavinciSplitSection() {
                   id="about-davinci-split-heading"
                   className="text-2xl font-light leading-snug tracking-tight text-white sm:text-[1.65rem] md:text-3xl"
                 >
-                  About Davinci
+                  {h.aboutHeading}
                 </h2>
                 <p className="mt-3 max-w-full text-[10px] font-normal uppercase leading-[1.65] tracking-[0.08em] text-white/95 sm:mt-4 sm:text-[11px] md:text-xs md:leading-[1.7]">
-                  Davinci Properties is a premier real estate company in the UAE, offering a wide range
-                  of properties to fit your unique needs. We pride ourselves on our commitment to
-                  providing exceptional service, transparency, and results. As our business continues
-                  to thrive, our team and clients will reap the rewards of our success.
+                  {h.aboutBody}
                 </p>
               </div>
             </div>

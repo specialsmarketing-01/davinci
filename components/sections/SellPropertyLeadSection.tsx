@@ -1,10 +1,15 @@
 "use client";
 
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { contact } from "@/lib/site";
 import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function SellPropertyLeadSection() {
+  const { site } = useNavLocale();
+  const sl = site.sellLead;
+  const cf = site.contactForm;
+  const ft = site.formThanks;
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -27,7 +32,7 @@ export function SellPropertyLeadSection() {
       setSent(true);
       form.reset();
     } catch {
-      setError("We could not send your message. Please email us directly.");
+      setError(sl.errorMessage);
     } finally {
       setSending(false);
     }
@@ -42,7 +47,7 @@ export function SellPropertyLeadSection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="lg:border-r lg:border-border lg:pr-12">
             <h2 id="sell-lead-heading" className="max-w-md text-2xl font-light uppercase leading-snug tracking-[0.18em] text-foreground sm:text-3xl md:text-[1.75rem] md:leading-tight">
-              <span className="block">Committed to your</span>
+              <span className="block">{sl.line1}</span>
               <span className="relative mt-3 inline-block">
                 <svg
                   className="pointer-events-none absolute -inset-x-3 -inset-y-2 w-[calc(100%+1.75rem)] text-accent sm:-inset-x-4 sm:-inset-y-2.5 sm:w-[calc(100%+2.25rem)]"
@@ -61,7 +66,7 @@ export function SellPropertyLeadSection() {
                     opacity="0.92"
                   />
                 </svg>
-                <span className="relative uppercase tracking-[0.18em] text-zinc-400">Successful</span>
+                <span className="relative uppercase tracking-[0.18em] text-zinc-400">{sl.highlight}</span>
               </span>
             </h2>
           </div>
@@ -71,7 +76,7 @@ export function SellPropertyLeadSection() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label htmlFor="sell-lead-name" className="sr-only">
-                    Full name
+                    {sl.placeholders.fullName}
                   </label>
                   <input
                     id="sell-lead-name"
@@ -79,13 +84,13 @@ export function SellPropertyLeadSection() {
                     type="text"
                     autoComplete="name"
                     required
-                    placeholder="Full Name"
+                    placeholder={sl.placeholders.fullName}
                     className="w-full rounded-md border border-border bg-background px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-1 focus:ring-zinc-300"
                   />
                 </div>
                 <div>
                   <label htmlFor="sell-lead-email" className="sr-only">
-                    Email
+                    {sl.placeholders.email}
                   </label>
                   <input
                     id="sell-lead-email"
@@ -93,7 +98,7 @@ export function SellPropertyLeadSection() {
                     type="email"
                     autoComplete="email"
                     required
-                    placeholder="Email"
+                    placeholder={sl.placeholders.email}
                     className="w-full rounded-md border border-border bg-background px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-1 focus:ring-zinc-300"
                   />
                 </div>
@@ -101,20 +106,20 @@ export function SellPropertyLeadSection() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label htmlFor="sell-lead-phone" className="sr-only">
-                    Phone
+                    {sl.placeholders.phone}
                   </label>
                   <input
                     id="sell-lead-phone"
                     name="phone"
                     type="tel"
                     autoComplete="tel"
-                    placeholder="Phone"
+                    placeholder={sl.placeholders.phone}
                     className="w-full rounded-md border border-border bg-background px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-1 focus:ring-zinc-300"
                   />
                 </div>
                 <div>
                   <label htmlFor="sell-lead-interest" className="sr-only">
-                    What are you interested in
+                    {cf.interestLabel}
                   </label>
                   <select
                     id="sell-lead-interest"
@@ -124,25 +129,25 @@ export function SellPropertyLeadSection() {
                     required
                   >
                     <option value="" disabled>
-                      What Are You Interested In?
+                      {cf.placeholderOption}
                     </option>
-                    <option value="buying">Buying</option>
-                    <option value="selling">Selling</option>
-                    <option value="area-information">Area Information</option>
-                    <option value="home-valuation">Home Valuation</option>
-                    <option value="other">Other</option>
+                    <option value="buying">{cf.buying}</option>
+                    <option value="selling">{cf.selling}</option>
+                    <option value="area-information">{cf.areaInformation}</option>
+                    <option value="home-valuation">{cf.homeValuation}</option>
+                    <option value="other">{cf.other}</option>
                   </select>
                 </div>
               </div>
               <div>
                 <label htmlFor="sell-lead-message" className="sr-only">
-                  Message
+                  {cf.message}
                 </label>
                 <textarea
                   id="sell-lead-message"
                   name="message"
                   rows={4}
-                  placeholder="Message"
+                  placeholder={sl.placeholders.message}
                   className="w-full rounded-md border border-border bg-background px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-zinc-400 focus:border-zinc-400 focus:ring-1 focus:ring-zinc-300"
                 />
               </div>
@@ -152,7 +157,7 @@ export function SellPropertyLeadSection() {
                   disabled={sending}
                   className="rounded-md bg-accent px-10 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-sm transition hover:bg-accent/90"
                 >
-                  {sending ? "Sending..." : "Send"}
+                  {sending ? sl.sending : sl.send}
                 </button>
               </div>
               {error && (
@@ -162,11 +167,12 @@ export function SellPropertyLeadSection() {
               )}
               {sent && (
                 <p className="text-sm text-muted" role="status">
-                  Thanks. We have received your enquiry. You can also email{" "}
+                  {ft.received}{" "}
+                  {ft.alsoEmail}{" "}
                   <a className="font-medium text-foreground underline" href={contact.emailHref}>
                     {contact.email}
                   </a>{" "}
-                  or call{" "}
+                  {ft.orCall}{" "}
                   <a className="font-medium text-foreground underline" href={contact.phoneHref}>
                     {contact.phone}
                   </a>

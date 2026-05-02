@@ -1,10 +1,13 @@
  "use client";
 
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { images } from "@/lib/placeholders";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export function Hero() {
+  const { site } = useNavLocale();
+  const h = site.home;
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export function Hero() {
   return (
     <section
       className="relative isolate -mt-16 min-h-[75svh] overflow-hidden pointer-events-none"
-      aria-label="Davinci Properties — Dubai real estate"
+      aria-label={h.heroVideoAria}
     >
       <div className="absolute inset-0">
         <video
@@ -63,7 +66,7 @@ export function Hero() {
           aria-hidden
         />
       </div>
-      <h1 className="sr-only">Davinci Properties — luxury Dubai real estate</h1>
+      <h1 className="sr-only">{h.heroSrOnly}</h1>
     </section>
   );
 }

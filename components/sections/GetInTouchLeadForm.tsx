@@ -1,9 +1,13 @@
 "use client";
 
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function GetInTouchLeadForm() {
+  const { site } = useNavLocale();
+  const g = site.getInTouch;
+  const ft = site.formThanks;
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +28,7 @@ export function GetInTouchLeadForm() {
       setSent(true);
       form.reset();
     } catch {
-      setError("We could not submit your request right now.");
+      setError(g.error);
     } finally {
       setSending(false);
     }
@@ -33,7 +37,7 @@ export function GetInTouchLeadForm() {
   if (sent) {
     return (
       <p className="text-sm leading-relaxed text-muted" role="status">
-        Thank you. We have received your request and will contact you shortly.
+        {ft.receivedRequest}
       </p>
     );
   }
@@ -44,12 +48,12 @@ export function GetInTouchLeadForm() {
         id="get-in-touch-heading"
         className="text-lg font-normal uppercase tracking-[0.12em] text-foreground"
       >
-        Get in touch
+        {g.heading}
       </h2>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="lead-name" className="sr-only">
-            Name
+            {g.placeholders.name}
           </label>
           <input
             id="lead-name"
@@ -57,13 +61,13 @@ export function GetInTouchLeadForm() {
             type="text"
             autoComplete="name"
             required
-            placeholder="Name"
+            placeholder={g.placeholders.name}
             className="w-full border border-zinc-200 bg-white px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-zinc-400 focus:border-zinc-400"
           />
         </div>
         <div>
           <label htmlFor="lead-phone" className="sr-only">
-            Phone
+            {g.placeholders.phone}
           </label>
           <input
             id="lead-phone"
@@ -71,14 +75,14 @@ export function GetInTouchLeadForm() {
             type="tel"
             autoComplete="tel"
             required
-            placeholder="Phone"
+            placeholder={g.placeholders.phone}
             className="w-full border border-zinc-200 bg-white px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-zinc-400 focus:border-zinc-400"
           />
         </div>
       </div>
       <div>
         <label htmlFor="lead-email" className="sr-only">
-          Email
+          {g.placeholders.email}
         </label>
         <input
           id="lead-email"
@@ -86,7 +90,7 @@ export function GetInTouchLeadForm() {
           type="email"
           autoComplete="email"
           required
-          placeholder="Email"
+          placeholder={g.placeholders.email}
           className="w-full border border-zinc-200 bg-white px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-zinc-400 focus:border-zinc-400"
         />
       </div>
@@ -95,7 +99,7 @@ export function GetInTouchLeadForm() {
         disabled={sending}
         className="w-full bg-foreground py-3.5 text-sm font-medium uppercase tracking-[0.2em] text-background transition hover:bg-foreground/90"
       >
-        {sending ? "Sending..." : "Subscribe"}
+        {sending ? g.sending : g.subscribe}
       </button>
       {error && (
         <p className="text-sm text-red-700" role="alert">

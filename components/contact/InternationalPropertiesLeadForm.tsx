@@ -1,10 +1,14 @@
 "use client";
 
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { contact } from "@/lib/site";
 import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function InternationalPropertiesLeadForm() {
+  const { site } = useNavLocale();
+  const i = site.intlLeadForm;
+  const ft = site.formThanks;
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -27,7 +31,7 @@ export function InternationalPropertiesLeadForm() {
       setSent(true);
       form.reset();
     } catch {
-      setError("We could not send your enquiry. Please email us directly.");
+      setError(i.error);
     } finally {
       setSending(false);
     }
@@ -40,13 +44,11 @@ export function InternationalPropertiesLeadForm() {
       className="space-y-5 rounded-2xl border border-border bg-zinc-50/80 p-6 sm:p-8"
       noValidate
     >
-      <h2 className="text-lg font-semibold uppercase tracking-[0.12em] text-foreground">
-        Send an enquiry
-      </h2>
+      <h2 className="text-lg font-semibold uppercase tracking-[0.12em] text-foreground">{i.heading}</h2>
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="intl-name" className="text-sm font-medium text-foreground">
-            Full name
+            {i.fullName}
           </label>
           <input
             id="intl-name"
@@ -55,12 +57,12 @@ export function InternationalPropertiesLeadForm() {
             autoComplete="name"
             required
             className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-            placeholder="Your name"
+            placeholder={i.placeholders.name}
           />
         </div>
         <div>
           <label htmlFor="intl-phone" className="text-sm font-medium text-foreground">
-            Phone
+            {i.phone}
           </label>
           <input
             id="intl-phone"
@@ -68,13 +70,13 @@ export function InternationalPropertiesLeadForm() {
             type="tel"
             autoComplete="tel"
             className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-            placeholder="+971 …"
+            placeholder={i.placeholders.phone}
           />
         </div>
       </div>
       <div>
         <label htmlFor="intl-email" className="text-sm font-medium text-foreground">
-          Email
+          {i.email}
         </label>
         <input
           id="intl-email"
@@ -83,12 +85,12 @@ export function InternationalPropertiesLeadForm() {
           autoComplete="email"
           required
           className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-          placeholder="you@company.com"
+          placeholder={i.placeholders.email}
         />
       </div>
       <div>
         <label htmlFor="intl-intent" className="text-sm font-medium text-foreground">
-          I am interested in
+          {i.intentLabel}
         </label>
         <select
           id="intl-intent"
@@ -98,24 +100,24 @@ export function InternationalPropertiesLeadForm() {
           required
         >
           <option value="" disabled>
-            Select an option
+            {i.intentPlaceholder}
           </option>
-          <option value="buy-international">Buying international property</option>
-          <option value="sell-international">Selling international property</option>
-          <option value="both">Buying and selling</option>
-          <option value="other">Other</option>
+          <option value="buy-international">{i.intentBuying}</option>
+          <option value="sell-international">{i.intentSelling}</option>
+          <option value="both">{i.intentBoth}</option>
+          <option value="other">{i.intentOther}</option>
         </select>
       </div>
       <div>
         <label htmlFor="intl-message" className="text-sm font-medium text-foreground">
-          Message
+          {i.message}
         </label>
         <textarea
           id="intl-message"
           name="message"
           rows={5}
           className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-          placeholder="Markets, budget range, timeline, or questions for our team."
+          placeholder={i.placeholders.message}
         />
       </div>
       <button
@@ -123,7 +125,7 @@ export function InternationalPropertiesLeadForm() {
         disabled={sending}
         className="w-full rounded-full bg-foreground py-3 text-sm font-semibold text-background transition hover:bg-foreground/90 sm:w-auto sm:px-10"
       >
-        {sending ? "Sending..." : "Contact us now"}
+        {sending ? i.sending : i.submit}
       </button>
       {error && (
         <p className="text-sm text-red-700" role="alert">
@@ -132,11 +134,12 @@ export function InternationalPropertiesLeadForm() {
       )}
       {sent && (
         <p className="text-sm text-muted" role="status">
-          Thanks. We have received your enquiry. You can also email{" "}
+          {ft.received}{" "}
+          {ft.alsoEmail}{" "}
           <a className="font-medium text-foreground underline" href={contact.emailHref}>
             {contact.email}
           </a>{" "}
-          or call{" "}
+          {ft.orCall}{" "}
           <a className="font-medium text-foreground underline" href={contact.phoneHref}>
             {contact.phone}
           </a>

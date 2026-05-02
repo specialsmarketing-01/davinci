@@ -1,21 +1,24 @@
+"use client";
+
 import { SiteLogo } from "@/components/layout/SiteLogo";
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { contact } from "@/lib/site";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-const featuredProperties = [
-  { label: "Luxury Projects", href: "/our-properties/" },
-  { label: "Off Plan Projects", href: "/damac-lagoons/" },
-  { label: "Sell Property", href: "/our-properties/sell/" },
-  { label: "Rent Property", href: "/rent/" },
+const featuredHrefs = [
+  "/our-properties/",
+  "/damac-lagoons/",
+  "/our-properties/sell/",
+  "/rent/",
 ] as const;
 
-const usefulLinks = [
-  { label: "About Davinci", href: "/about-davinci/" },
-  { label: "Our Services", href: "/services/" },
-  { label: "Careers", href: "/contact/" },
-  { label: "Privacy Policy", href: "/privacy-policy/" },
-  { label: "Terms of Services", href: "/terms-and-conditions/" },
+const usefulHrefs = [
+  "/about-davinci/",
+  "/services/",
+  "/contact/",
+  "/privacy-policy/",
+  "/terms-and-conditions/",
 ] as const;
 
 function ColumnTitle({ children }: { children: ReactNode }) {
@@ -28,6 +31,7 @@ function ColumnTitle({ children }: { children: ReactNode }) {
 }
 
 export function Footer() {
+  const { site } = useNavLocale();
   const officeStreet = contact.addressLines[1];
   const [emailLocal, emailHost] = contact.email.split("@");
   const emailDisplay =
@@ -45,32 +49,32 @@ export function Footer() {
             />
           </div>
 
-          <nav aria-label="Featured properties">
-            <ColumnTitle>Featured Properties</ColumnTitle>
+          <nav aria-label={site.footer.ariaFeatured}>
+            <ColumnTitle>{site.footer.featuredTitle}</ColumnTitle>
             <ul className="mt-4 space-y-2">
-              {featuredProperties.map((item) => (
-                <li key={item.href}>
+              {featuredHrefs.map((href) => (
+                <li key={href}>
                   <Link
-                    href={item.href}
+                    href={href}
                     className="text-sm text-white transition hover:text-accent-on-dark"
                   >
-                    {item.label}
+                    {site.footer.featured[href]}
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
 
-          <nav aria-label="Useful links">
-            <ColumnTitle>Useful Links</ColumnTitle>
+          <nav aria-label={site.footer.ariaUseful}>
+            <ColumnTitle>{site.footer.usefulTitle}</ColumnTitle>
             <ul className="mt-4 space-y-2">
-              {usefulLinks.map((item) => (
-                <li key={item.href}>
+              {usefulHrefs.map((href) => (
+                <li key={href}>
                   <Link
-                    href={item.href}
+                    href={href}
                     className="text-sm text-white transition hover:text-accent-on-dark"
                   >
-                    {item.label}
+                    {site.footer.useful[href]}
                   </Link>
                 </li>
               ))}
@@ -78,20 +82,20 @@ export function Footer() {
           </nav>
 
           <address className="not-italic">
-            <ColumnTitle>Contact Info</ColumnTitle>
+            <ColumnTitle>{site.footer.contactTitle}</ColumnTitle>
             <div className="mt-4 space-y-3 text-sm leading-relaxed text-white">
               <p>
-                <span className="font-medium">Office: </span>
+                <span className="font-medium">{site.footer.officePrefix} </span>
                 Office — {officeStreet}
               </p>
               <p>
-                <span className="font-medium">Hotline: </span>
+                <span className="font-medium">{site.footer.hotlinePrefix} </span>
                 <a className="hover:text-accent-on-dark hover:underline" href={contact.phoneHref}>
                   {contact.phone}
                 </a>
               </p>
               <p>
-                <span className="font-medium">Email: </span>
+                <span className="font-medium">{site.footer.emailPrefix} </span>
                 <a className="hover:text-accent-on-dark hover:underline" href={contact.emailHref}>
                   {emailDisplay}
                 </a>
@@ -100,7 +104,7 @@ export function Footer() {
           </address>
         </div>
         <p className="mt-10 border-t border-white/15 pt-5 text-center text-xs text-white/70">
-          Copyright 2023. All rights reserved.
+          {site.footer.copyright}
         </p>
       </div>
     </footer>

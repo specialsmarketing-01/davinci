@@ -1,11 +1,12 @@
+"use client";
+
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import Image from "next/image";
 
-const bullets = [
-  "Renewable 5- or 10-year residence; sponsor family where rules allow.",
-  "Property-led routes often start from AED 2M—we keep your plan aligned with current requirements.",
-] as const;
-
 export function GoldenVisaHomeSection() {
+  const { site } = useNavLocale();
+  const h = site.home;
+  const bullets = h.goldenBullets;
   return (
     <section
       className="border-b border-white/10 bg-black py-8 text-white sm:py-10 lg:py-12"
@@ -27,20 +28,19 @@ export function GoldenVisaHomeSection() {
           </div>
 
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Golden Visa</p>
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">{h.goldenKicker}</p>
             <h2
               id="golden-visa-home-heading"
               className="mt-3 text-3xl font-light leading-tight tracking-tight sm:text-4xl"
             >
-              UAE Golden Visa
+              {h.goldenHeading}
             </h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
-              Long-term residency for investors and select talents. We help you see how your property
-              goals fit eligibility, documents, and next steps.
+              {h.goldenIntro}
             </p>
             <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-zinc-400 sm:text-base">
-              {bullets.map((line) => (
-                <li key={line} className="flex gap-3">
+              {bullets.map((line, i) => (
+                <li key={i} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
                   <span>{line}</span>
                 </li>

@@ -1,10 +1,14 @@
 "use client";
 
+import { useNavLocale } from "@/components/providers/LocaleProvider";
 import { contact } from "@/lib/site";
 import { submitLead } from "@/lib/lead-submit";
 import { useState } from "react";
 
 export function ContactForm() {
+  const { site } = useNavLocale();
+  const cf = site.contactForm;
+  const ft = site.formThanks;
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -26,7 +30,7 @@ export function ContactForm() {
       setSent(true);
       form.reset();
     } catch {
-      setError("We could not send your message. Please email us directly.");
+      setError(cf.error);
     } finally {
       setSending(false);
     }
@@ -41,7 +45,7 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-medium text-foreground">
-            Full name
+            {cf.fullName}
           </label>
           <input
             id="name"
@@ -50,12 +54,12 @@ export function ContactForm() {
             autoComplete="name"
             required
             className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-            placeholder="Your name"
+            placeholder={cf.placeholders.name}
           />
         </div>
         <div>
           <label htmlFor="email" className="text-sm font-medium text-foreground">
-            Email
+            {cf.email}
           </label>
           <input
             id="email"
@@ -64,13 +68,13 @@ export function ContactForm() {
             autoComplete="email"
             required
             className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-            placeholder="you@company.com"
+            placeholder={cf.placeholders.email}
           />
         </div>
       </div>
       <div>
         <label htmlFor="interest" className="text-sm font-medium text-foreground">
-          What Are You Interested In?
+          {cf.interestLabel}
         </label>
         <select
           id="interest"
@@ -79,25 +83,25 @@ export function ContactForm() {
           defaultValue=""
         >
           <option value="" disabled>
-            Select an option
+            {cf.placeholderOption}
           </option>
-          <option value="buying">Buying</option>
-          <option value="selling">Selling</option>
-          <option value="area-information">Area Information</option>
-          <option value="home-valuation">Home Valuation</option>
-          <option value="other">Other</option>
+          <option value="buying">{cf.buying}</option>
+          <option value="selling">{cf.selling}</option>
+          <option value="area-information">{cf.areaInformation}</option>
+          <option value="home-valuation">{cf.homeValuation}</option>
+          <option value="other">{cf.other}</option>
         </select>
       </div>
       <div>
         <label htmlFor="message" className="text-sm font-medium text-foreground">
-          Message
+          {cf.message}
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
           className="mt-2 w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm outline-none ring-offset-2 focus:ring-2 focus:ring-accent"
-          placeholder="Tell us about timelines, budget range, and communities you are considering."
+          placeholder={cf.placeholders.message}
         />
       </div>
       <button
@@ -105,7 +109,7 @@ export function ContactForm() {
         disabled={sending}
         className="w-full rounded-full bg-foreground py-3 text-sm font-semibold text-background transition hover:bg-foreground/90 sm:w-auto sm:px-10"
       >
-        {sending ? "Sending..." : "Send message"}
+        {sending ? cf.sending : cf.submit}
       </button>
       {error && (
         <p className="text-sm text-red-700" role="alert">
@@ -114,11 +118,12 @@ export function ContactForm() {
       )}
       {sent && (
         <p className="text-sm text-muted" role="status">
-          Thanks. We have received your enquiry. You can also email{" "}
+          {ft.received}{" "}
+          {ft.alsoEmail}{" "}
           <a className="font-medium text-foreground underline" href={contact.emailHref}>
             {contact.email}
           </a>{" "}
-          or call{" "}
+          {ft.orCall}{" "}
           <a className="font-medium text-foreground underline" href={contact.phoneHref}>
             {contact.phone}
           </a>

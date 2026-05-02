@@ -1,5 +1,7 @@
 "use client";
 
+import { LOCALE_COOKIE_MAX_AGE_SEC, LOCALE_COOKIE_NAME } from "@/lib/i18n/constants";
+import { getSiteCopy } from "@/lib/i18n/site";
 import {
   NAV_LOCALE_STORAGE_KEY,
   type NavLocale,
@@ -19,6 +21,7 @@ type LocaleContextValue = {
   locale: NavLocale;
   setLocale: (locale: NavLocale) => void;
   t: (typeof navTranslations)["en"];
+  site: ReturnType<typeof getSiteCopy>;
 };
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
@@ -44,6 +47,11 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
     } catch {
       /* ignore */
     }
+    try {
+      document.cookie = `${LOCALE_COOKIE_NAME}=${locale};path=/;max-age=${LOCALE_COOKIE_MAX_AGE_SEC};SameSite=Lax`;
+    } catch {
+      /* ignore */
+    }
     document.documentElement.lang = locale === "ar" ? "ar" : locale === "ru" ? "ru" : "en";
     document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
   }, [locale, hydrated]);
@@ -55,6 +63,7 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
       locale,
       setLocale,
       t: navTranslations[locale],
+      site: getSiteCopy(locale),
     }),
     [locale, setLocale],
   );
