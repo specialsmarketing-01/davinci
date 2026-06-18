@@ -174,6 +174,35 @@ export const siteRu: SiteCopy = {
     exclusiveBody:
       "Подбор квартир, вилл и апартаментов в популярных районах Дубая. Спокойный формат без лишнего шума — от короткого списка до сопровождения сделки.",
     exclusiveCta: "К подборке",
+    signatureCommunitiesHeading: "Лучшие адреса Дубая",
+    signatureCommunitiesBody:
+      "От башен на набережной до семейных кварталов — районы, которые чаще всего выбирают наши клиенты, каждый со своим характером и ритмом жизни.",
+    signatureCommunitiesItems: [
+      {
+        name: "Downtown Dubai",
+        imageAlt: "Панорама Downtown Dubai с Burj Khalifa на закате",
+      },
+      {
+        name: "Dubai Marina",
+        imageAlt: "Вид сверху на Dubai Marina в сумерках с яхтами и подсвеченными башнями",
+      },
+      {
+        name: "Dubai Creek",
+        imageAlt: "Историческая набережная Dubai Creek и горизонт",
+      },
+      {
+        name: "Business Bay",
+        imageAlt: "Канал Business Bay и современные башни Дубая",
+      },
+      {
+        name: "Palm Jumeirah",
+        imageAlt: "Набережные Palm Jumeirah и побережье",
+      },
+      {
+        name: "Palm Jebel Ali",
+        imageAlt: "Побережье Дубая и зона Palm Jebel Ali",
+      },
+    ],
     goldenKicker: "Golden Visa",
     goldenHeading: "Виза ОАЭ Golden Visa",
     goldenIntro:

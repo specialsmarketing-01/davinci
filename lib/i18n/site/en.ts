@@ -177,6 +177,35 @@ export const siteEn = {
     exclusiveBody:
       "Discover curated homes, apartments, and villas in Dubai's most sought-after communities. With discreet advisory and meticulous follow-through, finding your next residence or investment stays calm and efficient.",
     exclusiveCta: "View exclusives",
+    signatureCommunitiesHeading: "Dubai's finest addresses",
+    signatureCommunitiesBody:
+      "From waterfront towers to family-friendly districts — browse the neighbourhoods our clients ask for most, each with its own character and lifestyle.",
+    signatureCommunitiesItems: [
+      {
+        name: "Dubai Downtown",
+        imageAlt: "Downtown Dubai skyline at dusk with Burj Khalifa and city lights",
+      },
+      {
+        name: "Dubai Marina",
+        imageAlt: "Aerial view of Dubai Marina at twilight with yachts and illuminated towers",
+      },
+      {
+        name: "Dubai Creek",
+        imageAlt: "Dubai Creek historic waterfront and skyline",
+      },
+      {
+        name: "Business Bay",
+        imageAlt: "Business Bay skyline at night with Burj Khalifa and illuminated towers",
+      },
+      {
+        name: "Palm Jumeirah",
+        imageAlt: "Palm Jumeirah waterfront residences and coastline",
+      },
+      {
+        name: "Palm Jebel Ali",
+        imageAlt: "Dubai coastline and Palm Jebel Ali development area",
+      },
+    ],
     goldenKicker: "Golden Visa",
     goldenHeading: "UAE Golden Visa",
     goldenIntro:

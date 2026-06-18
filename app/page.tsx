@@ -2,6 +2,7 @@ import { StatsSection } from "@/components/StatsSection";
 import { ExclusiveListingsLeadSection } from "@/components/sections/ExclusiveListingsLeadSection";
 import { Hero } from "@/components/sections/Hero";
 import { JourneyStagePillarsSection } from "@/components/sections/JourneyStagePillarsSection";
+import { SignatureCommunitiesSection } from "@/components/sections/SignatureCommunitiesSection";
 import { AboutDavinciSplitSection } from "@/components/sections/AboutDavinciSplitSection";
 import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { GoldenVisaHomeSection } from "@/components/sections/GoldenVisaHomeSection";
@@ -26,6 +27,7 @@ export default function HomePage() {
       <Hero />
       <StatsSection />
       <ExclusiveListingsLeadSection />
+      <SignatureCommunitiesSection />
       <JourneyStagePillarsSection />
       <GoldenVisaHomeSection />
       <PartnerLogosSection />

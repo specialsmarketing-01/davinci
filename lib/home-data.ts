@@ -36,3 +36,43 @@ export const partnerLogos = [
   { name: "Emaar", src: "/partners/emaar.png" },
   { name: "Omniyat", src: "/partners/omniyat.png" },
 ] as const;
+
+/** Signature Communities grid — image/href/layout; copy lives in i18n (same order). */
+export const signatureCommunityMedia = [
+  {
+    imageSrc: "/communities/community-downtown.jpg",
+    href: "/our-properties/",
+    layout: "tall-left",
+    gridClass: "lg:col-start-1 lg:row-start-1 lg:row-span-2",
+  },
+  {
+    imageSrc: "/communities/community-marina.jpg",
+    href: "/our-properties/",
+    layout: "small",
+    gridClass: "lg:col-start-2 lg:row-start-1",
+  },
+  {
+    imageSrc: "/communities/community-creek.png",
+    href: "/our-properties/",
+    layout: "small",
+    gridClass: "lg:col-start-2 lg:row-start-2",
+  },
+  {
+    imageSrc: "/communities/community-business-bay.jpg",
+    href: "/our-properties/",
+    layout: "small",
+    gridClass: "lg:col-start-3 lg:row-start-1",
+  },
+  {
+    imageSrc: "/communities/community-palm-jumeirah.png",
+    href: "/our-properties/",
+    layout: "small",
+    gridClass: "lg:col-start-3 lg:row-start-2",
+  },
+  {
+    imageSrc: "/communities/community-palm-jebel-ali.png",
+    href: "/our-properties/",
+    layout: "tall-right",
+    gridClass: "lg:col-start-4 lg:row-start-1 lg:row-span-2",
+  },
+] as const;
