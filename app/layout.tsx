@@ -5,9 +5,9 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { RequestCallbackTab } from "@/components/layout/RequestCallbackTab";
 import { SkipNavLink } from "@/components/layout/SkipNavLink";
-import { OrganizationJsonLd } from "@/components/seo/OrganizationJsonLd";
+import { SiteJsonLd } from "@/components/seo/SiteJsonLd";
 import { LocaleProvider } from "@/components/providers/LocaleProvider";
-import { seoKeywords, siteDescription, siteName } from "@/lib/site";
+import { seoKeywords, siteDescription, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -45,13 +45,29 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AE",
     siteName,
+    url: siteUrl,
     title: `${siteName} | Dubai Real Estate`,
     description: siteDescription,
+    images: [
+      {
+        url: "/home-hero.png",
+        width: 1200,
+        height: 630,
+        alt: "Davinci Properties Dubai real estate",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteName} | Dubai Real Estate`,
     description: siteDescription,
+    images: ["/home-hero.png"],
+  },
+  other: {
+    "geo.region": "AE-DU",
+    "geo.placename": "Dubai",
+    "geo.position": "25.1865;55.2675",
+    ICBM: "25.1865, 55.2675",
   },
   robots: {
     index: true,
@@ -67,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${notoSans.variable} ${tajawal.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased bg-background text-foreground">
-        <OrganizationJsonLd />
+        <SiteJsonLd />
         <LocaleProvider>
           <SkipNavLink />
           <Navbar />

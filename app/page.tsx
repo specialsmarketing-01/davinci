@@ -1,3 +1,4 @@
+import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { StatsSection } from "@/components/StatsSection";
 import { ExclusiveListingsLeadSection } from "@/components/sections/ExclusiveListingsLeadSection";
 import { Hero } from "@/components/sections/Hero";
@@ -9,6 +10,7 @@ import { GoldenVisaHomeSection } from "@/components/sections/GoldenVisaHomeSecti
 import { OfficeMapSection } from "@/components/sections/OfficeMapSection";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteDescription } from "@/lib/site";
+import { siteFaq } from "@/lib/structured-data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -23,7 +25,9 @@ export const metadata: Metadata = buildPageMetadata({
 
 export default function HomePage() {
   return (
-    <main id="main-content">
+    <>
+      <FaqJsonLd faqs={siteFaq} />
+      <main id="main-content">
       <Hero />
       <StatsSection />
       <ExclusiveListingsLeadSection />
@@ -33,6 +37,7 @@ export default function HomePage() {
       <PartnerLogosSection />
       <AboutDavinciSplitSection />
       <OfficeMapSection />
-    </main>
+      </main>
+    </>
   );
 }

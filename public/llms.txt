@@ -1,0 +1,58 @@
+# Davinci Properties
+
+> Premium Dubai real estate advisors for buying, selling, renting, and investing in UAE property.
+
+Davinci Properties is a Dubai-based real estate agency at The Exchange Tower, Business Bay. The website helps clients explore luxury homes, off-plan projects, rental options, Golden Visa pathways, and property advisory services across Dubai.
+
+## Canonical site
+
+- Website: https://davinci-properties.com/
+- Sitemap: https://davinci-properties.com/sitemap.xml
+
+## Primary pages
+
+- Home: https://davinci-properties.com/
+- Properties hub: https://davinci-properties.com/our-properties/
+- Sell property: https://davinci-properties.com/our-properties/sell/
+- Rent property: https://davinci-properties.com/rent/
+- List your property: https://davinci-properties.com/our-properties/list-your-property/
+- International properties: https://davinci-properties.com/our-properties/international-properties/
+- Services: https://davinci-properties.com/services/
+- About: https://davinci-properties.com/about-davinci/
+- Contact: https://davinci-properties.com/contact/
+
+## Services
+
+- Property & investment consultancy: https://davinci-properties.com/services/property-investment-consultancy/
+- Golden Visa: https://davinci-properties.com/services/golden-visa/
+- Dubai residence visa: https://davinci-properties.com/services/get-dubai-residence-visa/
+- Mortgage advisory: https://davinci-properties.com/services/mortgage-advisory/
+- Buyer guide: https://davinci-properties.com/services/buyer-guide/
+- Seller guide: https://davinci-properties.com/services/seller-guide/
+- Tenant guide: https://davinci-properties.com/services/tenant-guide/
+- Landlord guide: https://davinci-properties.com/services/landlord-guide/
+
+## Featured listings
+
+- Damac Lagoons: https://davinci-properties.com/properties/damac-lagoons/
+- V1ter Residence JVC: https://davinci-properties.com/properties/v1ter-residence-for-sale-in-jumeirah-village-circle-jvc-dubai/
+
+## Dubai communities covered
+
+Downtown Dubai, Dubai Marina, Business Bay, Dubai Creek, Palm Jumeirah, Palm Jebel Ali, JVC, and wider UAE residential markets.
+
+## Contact
+
+- Phone: +971 52 772 9114
+- Email: office@davinci-properties.com
+- Office: G06-17, The Exchange Tower, Business Bay, Dubai, UAE
+- Hours: Monday–Friday, 10:00–18:00
+- WhatsApp: https://wa.me/971527729114
+
+## Languages
+
+English, Arabic, and Russian (client-side UI switching on the same URLs).
+
+## Extended documentation
+
+- Full AI reference: https://davinci-properties.com/llms-full.txt

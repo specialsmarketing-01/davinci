@@ -1,3 +1,4 @@
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { AboutDavinciBody } from "@/components/pages/AboutDavinciBody";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -10,5 +11,15 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function AboutDavinciPage() {
-  return <AboutDavinciBody />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "About Davinci", path: "/about-davinci/" },
+        ]}
+      />
+      <AboutDavinciBody />
+    </>
+  );
 }

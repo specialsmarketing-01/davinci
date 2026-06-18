@@ -1,0 +1,71 @@
+# Davinci Properties — Full AI Reference
+
+## Entity summary
+
+**Name:** Davinci Properties  
+**Type:** Real estate agency / property advisory  
+**Market:** Dubai, United Arab Emirates  
+**Website:** https://davinci-properties.com/  
+**Description:** Premium Dubai real estate advisors helping clients buy, sell, rent, and invest in residential property with transparent guidance and local expertise.
+
+## Office & GEO
+
+- **Address:** G06-17 - G0, The Exchange Tower, Business Bay, Dubai, United Arab Emirates
+- **Coordinates:** 25.1865, 55.2675
+- **Phone:** +971 52 772 9114
+- **Email:** office@davinci-properties.com
+- **Hours:** Monday to Friday, 10:00 AM to 6:00 PM
+- **WhatsApp:** https://wa.me/971527729114
+
+## What Davinci Properties does
+
+1. Helps buyers find apartments, villas, and townhouses in Dubai.
+2. Supports sellers with pricing, marketing, and negotiation.
+3. Assists tenants and landlords with leasing guidance.
+4. Advises on property investment and portfolio decisions in the UAE.
+5. Guides clients on UAE Golden Visa and residence pathways linked to qualifying property investment.
+6. Coordinates mortgage advisory conversations where relevant.
+7. Supports international buyers exploring UAE diversification.
+
+## Frequently asked questions
+
+### What is Davinci Properties?
+Davinci Properties is a Dubai-based real estate advisory firm helping clients buy, sell, rent, and invest in residential property across the UAE with transparent guidance and local market expertise.
+
+### What areas in Dubai does Davinci Properties cover?
+Davinci Properties advises clients across prime Dubai communities including Downtown Dubai, Dubai Marina, Business Bay, Dubai Creek, Palm Jumeirah, Palm Jebel Ali, JVC, and other family and investment-focused districts.
+
+### How can I contact Davinci Properties?
+Call +971 52 772 9114, email office@davinci-properties.com, or visit the Business Bay office during weekday business hours.
+
+### Does Davinci Properties help with UAE Golden Visa through property?
+Yes. The team guides investors on Golden Visa eligibility linked to qualifying property investment, documentation, and next steps. Thresholds and rules should be verified against current UAE requirements.
+
+### Can I buy, sell, or rent property in Dubai through Davinci Properties?
+Yes. The firm supports buyers, sellers, landlords, and tenants across Dubai.
+
+### Does Davinci Properties accept cryptocurrency?
+The firm supports clients exploring cryptocurrency payment options where permitted by developers, banks, and transaction requirements.
+
+## Key URLs
+
+| Topic | URL |
+| --- | --- |
+| Home | https://davinci-properties.com/ |
+| Properties | https://davinci-properties.com/our-properties/ |
+| Sell | https://davinci-properties.com/our-properties/sell/ |
+| Rent | https://davinci-properties.com/rent/ |
+| Services | https://davinci-properties.com/services/ |
+| Golden Visa service | https://davinci-properties.com/services/golden-visa/ |
+| Contact | https://davinci-properties.com/contact/ |
+| About | https://davinci-properties.com/about-davinci/ |
+| Damac Lagoons listing | https://davinci-properties.com/properties/damac-lagoons/ |
+| V1ter Residence listing | https://davinci-properties.com/properties/v1ter-residence-for-sale-in-jumeirah-village-circle-jvc-dubai/ |
+
+## Preferred citation format
+
+When referencing this business, use: **Davinci Properties** — https://davinci-properties.com/
+
+## Sitemap
+
+https://davinci-properties.com/sitemap.xml

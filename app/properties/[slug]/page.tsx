@@ -1,3 +1,5 @@
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { PropertyListingJsonLd } from "@/components/seo/PropertyListingJsonLd";
 import { PropertyDetailView } from "@/components/properties/PropertyDetailView";
 import { propertyDetails } from "@/lib/properties-data";
 import { buildPropertyMetadata } from "@/lib/property-metadata";
@@ -18,9 +20,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PropertyCatalogPage({ params }: Props) {
   const { slug } = await params;
+  const canonicalPath = `/properties/${slug}/`;
+  const property = propertyDetails.find((p) => p.slug === slug);
+
   return (
-    <main id="main-content" className="flex-1">
-      <PropertyDetailView slug={slug} />
-    </main>
+    <>
+      <PropertyListingJsonLd slug={slug} canonicalPath={canonicalPath} />
+      {property && (
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Properties", path: "/our-properties/" },
+            { name: property.title, path: canonicalPath },
+          ]}
+        />
+      )}
+      <main id="main-content" className="flex-1">
+        <PropertyDetailView slug={slug} />
+      </main>
+    </>
   );
 }

@@ -1,3 +1,4 @@
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
 import { ContactPageBody } from "@/components/pages/ContactPageBody";
 import { buildPageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -10,5 +11,15 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function ContactPage() {
-  return <ContactPageBody />;
+  return (
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact/" },
+        ]}
+      />
+      <ContactPageBody />
+    </>
+  );
 }

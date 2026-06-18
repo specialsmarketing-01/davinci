@@ -1,5 +1,7 @@
 export const siteName = "Davinci Properties";
 
+export const siteUrl = "https://davinci-properties.com";
+
 export const siteDescription =
   "Premium Dubai real estate advisors helping you buy, sell, and rent exceptional homes and investment properties with clarity and confidence.";
 
@@ -8,6 +10,14 @@ export const seoKeywords = [
   "Buy Property Dubai",
   "Luxury Real Estate Dubai",
   "Apartments for Sale Dubai",
+  "Dubai Real Estate Agent",
+  "Sell Property Dubai",
+  "Rent Property Dubai",
+  "UAE Golden Visa Property",
+  "Business Bay Real Estate",
+  "Dubai Marina Apartments",
+  "Downtown Dubai Property",
+  "Real Estate Consultant Dubai",
 ] as const;
 
 /** Office postal block — line 1: company name, line 2: full street / area (use everywhere the office address appears). */

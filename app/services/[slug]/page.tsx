@@ -1,3 +1,5 @@
+import { BreadcrumbJsonLd } from "@/components/seo/BreadcrumbJsonLd";
+import { ServiceJsonLd } from "@/components/seo/ServiceJsonLd";
 import { ServiceGenericExperience } from "@/components/services/ServiceGenericExperience";
 import { ServiceLegacyExperience } from "@/components/services/ServiceLegacyExperience";
 import { getServiceBySlug, services } from "@/lib/services-data";
@@ -35,8 +37,32 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) notFound();
 
   if (service.legacyContent) {
-    return <ServiceLegacyExperience slug={service.slug} legacyEn={service.legacyContent} />;
+    return (
+      <>
+        <ServiceJsonLd service={service} />
+        <BreadcrumbJsonLd
+          items={[
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services/" },
+            { name: service.title, path: `/services/${service.slug}/` },
+          ]}
+        />
+        <ServiceLegacyExperience slug={service.slug} legacyEn={service.legacyContent} />
+      </>
+    );
   }
 
-  return <ServiceGenericExperience service={service} />;
+  return (
+    <>
+      <ServiceJsonLd service={service} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services/" },
+          { name: service.title, path: `/services/${service.slug}/` },
+        ]}
+      />
+      <ServiceGenericExperience service={service} />
+    </>
+  );
 }
