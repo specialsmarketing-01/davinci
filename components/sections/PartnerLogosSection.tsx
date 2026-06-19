@@ -34,20 +34,20 @@ export function PartnerLogosSection() {
             {[0, 1].map((copy) => (
               <div
                 key={copy}
-                className="flex shrink-0 items-center gap-x-12 sm:gap-x-14"
+                className="flex shrink-0 items-center gap-x-4 sm:gap-x-12 md:gap-x-14"
                 aria-hidden={copy === 1 ? true : undefined}
               >
                 {partnerLogos.map((partner) => (
                   <div
                     key={`${copy}-${partner.name}`}
-                    className="relative h-14 w-44 shrink-0 sm:h-14 sm:w-40 md:h-16 md:w-44"
+                    className="relative h-10 w-[27vw] max-w-24 shrink-0 sm:h-14 sm:w-40 sm:max-w-none md:h-16 md:w-44"
                   >
                     <Image
                       src={partner.src}
                       alt={partner.name}
                       fill
                       className="object-contain object-center"
-                      sizes="(max-width: 768px) 176px, 192px"
+                      sizes="(max-width: 640px) 30vw, 192px"
                     />
                   </div>
                 ))}

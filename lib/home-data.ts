@@ -34,6 +34,7 @@ export const partnerLogos = [
   { name: "ORO24 Developments", src: "/partners/oro24.png" },
   { name: "Sobha Realty", src: "/partners/sobha.png" },
   { name: "Emaar", src: "/partners/emaar.png" },
+  { name: "Imtiaz Developments", src: "/partners/imtiaz.png" },
   { name: "Omniyat", src: "/partners/omniyat.png" },
 ] as const;
 
