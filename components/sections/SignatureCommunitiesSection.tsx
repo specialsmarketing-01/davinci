@@ -80,14 +80,7 @@ export function SignatureCommunitiesSection() {
                   aria-hidden
                 />
                 <div className="relative mt-auto flex w-full items-end justify-between gap-3 p-5 sm:p-6">
-                  <div>
-                    <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-accent-on-dark sm:text-xs">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <span className="mt-1 block text-base font-light text-white sm:text-lg">
-                      {item.name}
-                    </span>
-                  </div>
+                  <span className="text-base font-light text-white sm:text-lg">{item.name}</span>
                   <span
                     className="mb-1 shrink-0 text-lg text-accent-on-dark opacity-0 transition duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
                     aria-hidden
