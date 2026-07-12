@@ -22,8 +22,8 @@ export function SiteLogo({ forDarkBackground = false, className, imageClassName,
       <Image
         src="/Davinci-properties-logo.png"
         alt="Davinci Properties"
-        width={280}
-        height={78}
+        width={400}
+        height={130}
         priority
         className={cn(
           "h-[2.8rem] w-auto sm:h-[3.15rem]",
