@@ -1,8 +1,6 @@
- "use client";
+"use client";
 
 import { useNavLocale } from "@/components/providers/LocaleProvider";
-import { images } from "@/lib/placeholders";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export function Hero() {
@@ -43,20 +41,11 @@ export function Hero() {
           muted
           playsInline
           preload="auto"
-          poster={images.homeHero.src}
           className="h-full w-full object-cover"
           aria-hidden
         >
           <source src="/213422.mp4" type="video/mp4" />
         </video>
-        <Image
-          src={images.homeHero.src}
-          alt={images.homeHero.alt}
-          fill
-          priority
-          className="object-cover opacity-0"
-          sizes="100vw"
-        />
         <div
           className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/55"
           aria-hidden

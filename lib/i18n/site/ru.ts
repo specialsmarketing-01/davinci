@@ -179,7 +179,7 @@ export const siteRu: SiteCopy = {
     sellRentAria: "Продажа или аренда недвижимости",
     sellRentCards: [
       {
-        title: "Продайте недвижимость",
+        title: "Купите, продайте недвижимость",
         href: "/our-properties/sell/",
         imageSrc: "/sell-your-property-panel.png",
         imageAlt: "Руки передают винтажный ключ от дома на тёмном фоне",

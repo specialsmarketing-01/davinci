@@ -179,7 +179,7 @@ export const siteAr: SiteCopy = {
     sellRentAria: "بيع أو تأجير عقارك",
     sellRentCards: [
       {
-        title: "بيع عقارك",
+        title: "اشترِ، بِع عقارك",
         href: "/our-properties/sell/",
         imageSrc: "/sell-your-property-panel.png",
         imageAlt: "يدان تتبادلان مفتاح منزل كلاسيكي على خلفية داكنة",

@@ -182,7 +182,7 @@ export const siteEn = {
     sellRentAria: "Sell or rent your property",
     sellRentCards: [
       {
-        title: "Sell your property",
+        title: "Buy, Sell your property",
         href: "/our-properties/sell/",
         imageSrc: "/sell-your-property-panel.png",
         imageAlt: "Hands exchanging a vintage house key on a dark background",

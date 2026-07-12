@@ -24,7 +24,7 @@ export function SellRentPropertySplitSection() {
             }`}
           >
             <div className="relative z-10 flex flex-1 items-center px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14">
-              <h2 className="max-w-[10rem] text-xl font-light leading-snug tracking-tight text-white sm:max-w-none sm:text-3xl lg:text-4xl">
+              <h2 className="max-w-[14rem] text-xl font-light leading-snug tracking-tight text-white sm:max-w-none sm:text-3xl lg:text-4xl">
                 {card.title}
               </h2>
             </div>

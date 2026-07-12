@@ -27,7 +27,7 @@ export function GoldenVisaHomeSection() {
             />
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">{h.goldenKicker}</p>
             <h2
               id="golden-visa-home-heading"
@@ -35,10 +35,10 @@ export function GoldenVisaHomeSection() {
             >
               {h.goldenHeading}
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg lg:mx-0">
               {h.goldenIntro}
             </p>
-            <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-zinc-400 sm:text-base">
+            <ul className="mx-auto mt-6 max-w-xl space-y-2.5 text-left text-sm leading-relaxed text-zinc-400 sm:text-base lg:mx-0">
               {bullets.map((line, i) => (
                 <li key={i} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />

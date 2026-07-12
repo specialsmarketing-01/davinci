@@ -35,7 +35,7 @@ export function SignatureCommunitiesSection() {
       aria-labelledby="signature-communities-heading"
     >
       <div className="mx-auto max-w-[90rem] px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24 xl:px-12">
-        <div className="max-w-2xl">
+        <div className="mx-auto max-w-2xl text-center">
           <h2
             id="signature-communities-heading"
             className="text-3xl font-light leading-tight tracking-tight text-foreground sm:text-4xl"
