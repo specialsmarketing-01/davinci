@@ -26,11 +26,11 @@ export function SiteLogo({ forDarkBackground = false, className, imageClassName,
         height={130}
         priority
         className={cn(
-          "h-[2.8rem] w-auto sm:h-[3.15rem]",
+          "h-[3.22rem] w-auto sm:h-[3.62rem]",
           forDarkBackground && "brightness-0 invert",
           imageClassName,
         )}
-        sizes="(max-width: 640px) 224px, 280px"
+        sizes="(max-width: 640px) 258px, 322px"
       />
     </Link>
   );

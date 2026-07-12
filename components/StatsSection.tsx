@@ -17,7 +17,7 @@ export function StatsSection() {
       <div className="mx-auto max-w-7xl px-4 pt-10 pb-0 sm:px-6 sm:pt-12 lg:px-8 lg:pt-14">
         <p
           id="stats-heading"
-          className="mb-10 text-center text-base font-medium uppercase tracking-[0.25em] text-accent-on-dark sm:mb-12 sm:text-lg"
+          className="mb-10 text-center text-[0.8rem] font-medium uppercase tracking-[0.25em] text-accent-on-dark sm:mb-12 sm:text-[0.9rem]"
         >
           {st.atAGlance}
         </p>
@@ -35,7 +35,7 @@ export function StatsSection() {
                 sizes="(max-width: 768px) 260px, 300px"
               />
             </div>
-            <p className="text-center text-base font-medium uppercase leading-snug tracking-[0.22em] text-accent-on-dark sm:text-lg">
+            <p className="text-center text-[0.8rem] font-medium uppercase leading-snug tracking-[0.22em] text-accent-on-dark sm:text-[0.9rem]">
               {st.cryptoCaption}
             </p>
           </div>

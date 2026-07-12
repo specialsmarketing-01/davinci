@@ -62,7 +62,7 @@ export function StatCounter({
         {value}
         {suffix}
       </p>
-      <p className="text-base uppercase tracking-[0.35em] text-accent-on-dark sm:text-lg">{label}</p>
+      <p className="text-[0.8rem] uppercase tracking-[0.35em] text-accent-on-dark sm:text-[0.9rem]">{label}</p>
     </div>
   );
 }
