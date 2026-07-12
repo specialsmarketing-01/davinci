@@ -44,9 +44,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div>
-            <SiteLogo
-              imageClassName="h-[4.2rem] w-auto sm:h-[4.725rem]"
-            />
+            <SiteLogo />
           </div>
 
           <nav aria-label={site.footer.ariaFeatured}>
