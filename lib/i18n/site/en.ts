@@ -209,7 +209,7 @@ export const siteEn = {
     goldenKicker: "Golden Visa",
     goldenHeading: "Unlock Your Golden Visa with Davinci Properties",
     goldenIntro:
-      "Long-term residency for investors and select talents. We help you see how your property goals fit eligibility, documents, and next steps.",
+      "Invest in Dubai real estate and unlock exclusive Golden Visa benefits for a secure future, premium lifestyle, and long-term UAE residency.",
     goldenBullets: [
       "Renewable 5- or 10-year residence; sponsor family where rules allow.",
       "Property-led routes often start from AED 2M—we keep your plan aligned with current requirements.",
