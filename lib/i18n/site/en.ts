@@ -194,6 +194,7 @@ export const siteEn = {
         imageAlt: "Luxury living room with leather sofa and ambient lighting",
       },
     ],
+    signatureCommunitiesKicker: "Signature communities",
     signatureCommunitiesHeading: "Dubai's finest addresses",
     signatureCommunitiesBody:
       "From waterfront towers to family-friendly districts — browse the neighbourhoods our clients ask for most, each with its own character and lifestyle.",

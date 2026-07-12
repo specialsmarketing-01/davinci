@@ -191,6 +191,7 @@ export const siteAr: SiteCopy = {
         imageAlt: "غرفة معيشة فاخرة مع أريكة جلدية وإضاءة دافئة",
       },
     ],
+    signatureCommunitiesKicker: "مجتمعات مميزة",
     signatureCommunitiesHeading: "أرقى عناوين دبي",
     signatureCommunitiesBody:
       "من أبراج الواجهة البحرية إلى أحياء تناسب العائلات — استكشف المناطق الأكثر طلبًا لدى عملائنا، ولكل منها طابعها وأسلوب حياتها.",

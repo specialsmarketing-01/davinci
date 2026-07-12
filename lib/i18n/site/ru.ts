@@ -191,6 +191,7 @@ export const siteRu: SiteCopy = {
         imageAlt: "Роскошная гостиная с кожаным диваном и мягким светом",
       },
     ],
+    signatureCommunitiesKicker: "Премиальные районы",
     signatureCommunitiesHeading: "Лучшие адреса Дубая",
     signatureCommunitiesBody:
       "От башен на набережной до семейных кварталов — районы, которые чаще всего выбирают наши клиенты, каждый со своим характером и ритмом жизни.",
