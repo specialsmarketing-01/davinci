@@ -14,7 +14,7 @@ export function StatsSection() {
       className="w-full overflow-x-hidden bg-black text-white"
       aria-labelledby="stats-heading"
     >
-      <div className="px-4 py-8 md:px-6 md:py-10 lg:px-8">
+      <div className="px-4 pt-8 pb-0 md:px-6 md:pt-10 lg:px-8 lg:pt-10">
         <p
           id="stats-heading"
           className="mb-6 text-center text-[11px] font-medium uppercase tracking-[0.25em] text-accent-on-dark md:mb-8 md:text-xs"
@@ -56,13 +56,13 @@ export function StatsSection() {
                 className="rounded-none object-cover object-center transition duration-300 ease-out group-hover:scale-[1.01]"
               />
             </div>
-            <div className="flex w-full flex-shrink-0 flex-col items-center justify-center gap-1 bg-[#020101f0] px-5 py-8 md:w-auto md:min-w-[9rem] md:px-4 md:py-10 lg:min-w-[10rem] lg:px-5">
+            <div className="flex w-full flex-shrink-0 flex-col items-center justify-center gap-1 bg-black px-5 py-8 md:w-auto md:min-w-[9rem] md:px-4 md:py-10 lg:min-w-[10rem] lg:px-5">
               <StatCounter target={500} suffix="+" label={st.happyClientsLabel} align="center" />
             </div>
           </div>
         </div>
 
-        <p className="mt-6 text-center text-xs leading-relaxed text-zinc-500 md:mt-8">
+        <p className="mt-6 pb-8 text-center text-xs leading-relaxed text-zinc-500 md:mt-8 md:pb-10">
           {st.footerLine}
         </p>
       </div>

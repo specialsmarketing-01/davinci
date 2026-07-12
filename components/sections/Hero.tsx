@@ -66,6 +66,11 @@ export function Hero() {
           aria-hidden
         />
       </div>
+      <div className="relative z-10 flex min-h-[75svh] flex-col justify-end px-4 pb-10 pt-16 sm:px-6 sm:pb-12 lg:px-8 lg:pb-14">
+        <p className="mx-auto max-w-3xl text-center text-base font-light leading-relaxed text-white sm:text-lg">
+          {h.heroTagline}
+        </p>
+      </div>
       <h1 className="sr-only">{h.heroSrOnly}</h1>
     </section>
   );

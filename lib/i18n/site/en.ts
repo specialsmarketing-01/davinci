@@ -148,6 +148,8 @@ export const siteEn = {
   },
   home: {
     heroSrOnly: "Davinci Properties — luxury Dubai real estate",
+    heroTagline:
+      "We help clients buy apartments, villas, and penthouses at new developments in Dubai and key cities across the UAE.",
     heroVideoAria: "Davinci Properties — Dubai real estate",
     journeyHeading: "Guidance for every stage of your property journey",
     journeyPillars: [
@@ -177,6 +179,21 @@ export const siteEn = {
     exclusiveBody:
       "Discover curated homes, apartments, and villas in Dubai's most sought-after communities. With discreet advisory and meticulous follow-through, finding your next residence or investment stays calm and efficient.",
     exclusiveCta: "View exclusives",
+    sellRentAria: "Sell or rent your property",
+    sellRentCards: [
+      {
+        title: "Sell your property",
+        href: "/our-properties/sell/",
+        imageSrc: "/sell-your-property-panel.png",
+        imageAlt: "Hands exchanging a vintage house key on a dark background",
+      },
+      {
+        title: "Rent out your property",
+        href: "/rent/",
+        imageSrc: "/rent-your-property-panel.png",
+        imageAlt: "Luxury living room with leather sofa and ambient lighting",
+      },
+    ],
     signatureCommunitiesHeading: "Dubai's finest addresses",
     signatureCommunitiesBody:
       "From waterfront towers to family-friendly districts — browse the neighbourhoods our clients ask for most, each with its own character and lifestyle.",
@@ -217,6 +234,23 @@ export const siteEn = {
     aboutHeading: "About Davinci",
     aboutBody:
       "Davinci Properties is a premier real estate company in the UAE, offering a wide range of properties to fit your unique needs. We pride ourselves on our commitment to providing exceptional service, transparency, and results. As our business continues to thrive, our team and clients will reap the rewards of our success.",
+    legacy: {
+      kicker: "DAVINCI PROPERTIES",
+      heading: "Where Investment Becomes Legacy",
+      paragraphs: [
+        "Davinci Properties is a boutique real estate advisory firm based in Business Bay, Dubai, serving a distinguished international clientele of investors, entrepreneurs, and private individuals.",
+        "Established in 2023, the company has rapidly positioned itself within the upper tier of Dubai's luxury real estate market — not by volume, but by precision, discretion, and the caliber of opportunities it delivers.",
+        "Under the leadership of Elmira Suleiman, Founder & CEO, Davinci Properties has cultivated strategic partnerships with Dubai's most respected developers. This privileged access enables our clients to secure priority allocations, bespoke investment terms, and entry into highly curated, often off-market opportunities.",
+        "Our philosophy is rooted in a highly personalized, advisory-led approach. We go beyond conventional brokerage — offering tailored strategies aligned with each client's financial vision, lifestyle ambitions, and long-term wealth preservation goals.",
+        "Every asset within our portfolio is meticulously selected based on location, architectural integrity, developer reputation, and investment performance potential. From acquisition to post-purchase management, we ensure a seamless, confidential, and elevated experience at every stage.",
+      ],
+      closingLines: [
+        "At Davinci Properties, real estate is not transactional — it is strategic.",
+        "It is legacy-building.",
+        "It is a reflection of who you are and where you are going.",
+      ],
+      tagline: "Davinci Properties — Beyond Property. Beyond Expectations.",
+    },
     partnersHeading: "Partners",
   },
   ourPropertiesHub: {

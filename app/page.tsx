@@ -1,10 +1,11 @@
 import { FaqJsonLd } from "@/components/seo/FaqJsonLd";
 import { StatsSection } from "@/components/StatsSection";
-import { ExclusiveListingsLeadSection } from "@/components/sections/ExclusiveListingsLeadSection";
+import { SellRentPropertySplitSection } from "@/components/sections/SellRentPropertySplitSection";
 import { Hero } from "@/components/sections/Hero";
 import { JourneyStagePillarsSection } from "@/components/sections/JourneyStagePillarsSection";
 import { SignatureCommunitiesSection } from "@/components/sections/SignatureCommunitiesSection";
 import { AboutDavinciSplitSection } from "@/components/sections/AboutDavinciSplitSection";
+import { DavinciLegacySection } from "@/components/sections/DavinciLegacySection";
 import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { GoldenVisaHomeSection } from "@/components/sections/GoldenVisaHomeSection";
 import { OfficeMapSection } from "@/components/sections/OfficeMapSection";
@@ -30,12 +31,13 @@ export default function HomePage() {
       <main id="main-content">
       <Hero />
       <StatsSection />
-      <ExclusiveListingsLeadSection />
+      <SellRentPropertySplitSection />
       <SignatureCommunitiesSection />
       <JourneyStagePillarsSection />
       <GoldenVisaHomeSection />
       <PartnerLogosSection />
       <AboutDavinciSplitSection />
+      <DavinciLegacySection />
       <OfficeMapSection />
       </main>
     </>
