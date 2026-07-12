@@ -45,7 +45,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div>
             <SiteLogo
-              imageClassName="!h-auto max-h-[3.75rem] w-auto max-w-[min(100%,240px)] sm:max-h-[3.85rem] sm:max-w-[260px]"
+              imageClassName="h-[4.2rem] w-auto sm:h-[4.725rem]"
             />
           </div>
 
