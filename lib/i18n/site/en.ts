@@ -207,7 +207,7 @@ export const siteEn = {
       },
     ],
     goldenKicker: "Golden Visa",
-    goldenHeading: "UAE Golden Visa",
+    goldenHeading: "Unlock Your Golden Visa with Davinci Properties",
     goldenIntro:
       "Long-term residency for investors and select talents. We help you see how your property goals fit eligibility, documents, and next steps.",
     goldenBullets: [
