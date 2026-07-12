@@ -23,7 +23,7 @@ export const seoKeywords = [
 /** Office postal block — line 1: company name, line 2: full street / area (use everywhere the office address appears). */
 export const officeAddressLines = [
   "Davinci Properties",
-  "G06-17 - G0, The Exchange Tower - الخليج التجاري - دبي - United Arab Emirates",
+  "G06-17 - G0, The Exchange Tower - الخليج التجاري - Dubai, United Arab Emirates",
 ] as const;
 
 export const contact = {
