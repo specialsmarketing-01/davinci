@@ -41,7 +41,7 @@ export const partnerLogos = [
 /** Signature Communities grid — image/href/layout; copy lives in i18n (same order). */
 export const signatureCommunityMedia = [
   {
-    imageSrc: "/communities/community-downtown.jpg?v=2",
+    imageSrc: "/communities/community-downtown-real.jpg",
     href: "/our-properties/",
     layout: "tall-left",
     gridClass: "lg:col-start-1 lg:row-start-1 lg:row-span-2",

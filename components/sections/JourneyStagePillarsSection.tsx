@@ -21,8 +21,8 @@ export function JourneyStagePillarsSection() {
 
         <div className="mt-14 grid gap-12 sm:grid-cols-2 sm:gap-10 lg:mt-16 lg:grid-cols-4 lg:gap-8">
           {pillars.map((item) => (
-            <div key={item.step} className="flex flex-col items-start text-left">
-              <div className="flex w-full items-center gap-3">
+            <div key={item.step} className="flex flex-col items-center text-center sm:items-start sm:text-left">
+              <div className="flex w-full items-center justify-center gap-3 sm:justify-start">
                 <span className="shrink-0 text-4xl font-light tabular-nums tracking-tight text-white sm:text-[2.5rem]">
                   {item.step}
                 </span>

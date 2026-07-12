@@ -40,14 +40,14 @@ export function PartnerLogosSection() {
                 {partnerLogos.map((partner) => (
                   <div
                     key={`${copy}-${partner.name}`}
-                    className="relative h-10 w-[27vw] max-w-24 shrink-0 sm:h-14 sm:w-40 sm:max-w-none md:h-16 md:w-44"
+                    className="relative h-[3.16rem] w-[29.7vw] max-w-[7.59rem] shrink-0 sm:h-[4.025rem] sm:w-[11.5rem] sm:max-w-none md:h-[4.6rem] md:w-[12.65rem]"
                   >
                     <Image
                       src={partner.src}
                       alt={partner.name}
                       fill
                       className="object-contain object-center"
-                      sizes="(max-width: 640px) 30vw, 192px"
+                      sizes="(max-width: 640px) 33vw, 221px"
                     />
                   </div>
                 ))}
