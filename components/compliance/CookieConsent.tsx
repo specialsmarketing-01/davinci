@@ -84,9 +84,9 @@ export function CookieConsent() {
       aria-live="polite"
       aria-label={c.ariaLabel}
     >
-      <p className="text-sm font-semibold text-foreground">{c.heading}</p>
-      <p className="mt-2 text-sm leading-relaxed text-muted">{c.body}</p>
-      <p className="mt-2 text-xs text-muted">
+      <p className="text-body font-semibold text-foreground">{c.heading}</p>
+      <p className="text-body mt-2 text-muted">{c.body}</p>
+      <p className="text-body mt-2 text-muted">
         {c.privacyPrefix}{" "}
         <Link className="underline hover:text-foreground" href="/privacy-policy/">
           {c.privacyPolicy}
@@ -126,7 +126,7 @@ export function CookieConsent() {
 
       {customizeOpen ? (
         <div id="cookie-customize" className="mt-4 rounded-lg border border-border bg-zinc-50 p-3">
-          <div className="space-y-2 text-sm">
+          <div className="text-body space-y-2">
             <label className="flex items-center justify-between gap-4">
               <span>{c.essential}</span>
               <input type="checkbox" checked disabled className="h-4 w-4 accent-accent" />

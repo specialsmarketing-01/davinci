@@ -24,7 +24,7 @@ const usefulHrefs = [
 function ColumnTitle({ children }: { children: ReactNode }) {
   return (
     <>
-      <p className="text-sm font-normal text-white">{children}</p>
+      <p className="text-body font-normal text-white">{children}</p>
       <div className="mt-2 h-px w-full bg-white" aria-hidden />
     </>
   );
@@ -56,7 +56,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-white transition hover:text-accent-on-dark"
+                    className="text-body text-white transition hover:text-accent-on-dark"
                   >
                     {site.footer.featured[href]}
                   </Link>
@@ -72,7 +72,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="text-sm text-white transition hover:text-accent-on-dark"
+                    className="text-body text-white transition hover:text-accent-on-dark"
                   >
                     {site.footer.useful[href]}
                   </Link>
@@ -83,7 +83,7 @@ export function Footer() {
 
           <address className="not-italic">
             <ColumnTitle>{site.footer.contactTitle}</ColumnTitle>
-            <div className="mt-4 space-y-3 text-sm leading-relaxed text-white">
+            <div className="text-body mt-4 space-y-3 text-white">
               <p>
                 <span className="font-medium">{site.footer.officePrefix} </span>
                 Office — {officeStreet}
@@ -103,7 +103,7 @@ export function Footer() {
             </div>
           </address>
         </div>
-        <p className="mt-10 border-t border-white/15 pt-5 text-center text-xs text-white/70">
+        <p className="text-body mt-10 border-t border-white/15 pt-5 text-center text-white/70">
           {site.footer.copyright}
         </p>
       </div>

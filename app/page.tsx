@@ -5,7 +5,6 @@ import { Hero } from "@/components/sections/Hero";
 import { JourneyStagePillarsSection } from "@/components/sections/JourneyStagePillarsSection";
 import { SignatureCommunitiesSection } from "@/components/sections/SignatureCommunitiesSection";
 import { AboutDavinciSplitSection } from "@/components/sections/AboutDavinciSplitSection";
-import { DavinciLegacySection } from "@/components/sections/DavinciLegacySection";
 import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
 import { GoldenVisaHomeSection } from "@/components/sections/GoldenVisaHomeSection";
 import { OfficeMapSection } from "@/components/sections/OfficeMapSection";
@@ -37,7 +36,6 @@ export default function HomePage() {
       <GoldenVisaHomeSection />
       <PartnerLogosSection />
       <AboutDavinciSplitSection />
-      <DavinciLegacySection />
       <OfficeMapSection />
       </main>
     </>

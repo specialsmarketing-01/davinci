@@ -233,8 +233,12 @@ export const siteEn = {
       "Property-led routes often start from AED 2M—we keep your plan aligned with current requirements.",
     ],
     aboutHeading: "About Davinci",
-    aboutBody:
-      "Davinci Properties is a premier real estate company in the UAE, offering a wide range of properties to fit your unique needs. We pride ourselves on our commitment to providing exceptional service, transparency, and results. As our business continues to thrive, our team and clients will reap the rewards of our success.",
+    aboutBody: [
+      "Davinci Properties is a premier real estate company based in Dubai, UAE. Offering a wide range of properties to fit your unique needs. We pride ourselves on our commitment to providing exceptional services, transparency, and results.",
+      "Established in 2023, the company has swiftly positioned itself within the upper tier of Dubai's luxury real estate market.",
+      "Under the leadership of Elmira Suleiman, Founder & CEO, Davinci Properties has built strategic partnerships with some of Dubai's most respected developers, granting clients privileged access to priority allocations, bespoke terms, and exclusive off-market opportunities.",
+      "As our business continues to thrive, our team and clients will reap the rewards of our success.",
+    ],
     legacy: {
       kicker: "DAVINCI PROPERTIES",
       heading: "Where Investment Becomes Legacy",

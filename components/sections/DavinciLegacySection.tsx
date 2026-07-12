@@ -12,7 +12,7 @@ export function DavinciLegacySection() {
       aria-labelledby="davinci-legacy-heading"
     >
       <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        <p className="text-center text-xs font-medium uppercase tracking-[0.45em] text-accent sm:text-sm">
+        <p className="text-body text-center font-medium uppercase tracking-[0.45em] text-accent">
           {l.kicker}
         </p>
         <h2
@@ -22,7 +22,7 @@ export function DavinciLegacySection() {
           {l.heading}
         </h2>
 
-        <div className="mt-10 space-y-6 text-base leading-relaxed text-muted sm:mt-12 sm:text-lg sm:leading-relaxed">
+        <div className="text-body mt-10 space-y-6 text-muted sm:mt-12">
           {l.paragraphs.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
@@ -32,12 +32,12 @@ export function DavinciLegacySection() {
           {l.closingLines.map((line, index) => (
             <p
               key={index}
-              className="text-center text-lg font-light leading-relaxed text-foreground sm:text-xl"
+              className="text-body text-center font-light text-foreground"
             >
               {line}
             </p>
           ))}
-          <p className="pt-4 text-center text-sm font-medium uppercase tracking-[0.2em] text-accent sm:text-base">
+          <p className="text-body pt-4 text-center font-medium uppercase tracking-[0.2em] text-accent">
             {l.tagline}
           </p>
         </div>

@@ -85,7 +85,7 @@ export function Navbar() {
   }, [mobileOpen]);
 
   const navLink =
-    "text-sm font-medium tracking-wide transition-colors";
+    "text-body font-medium tracking-wide transition-colors";
 
   const normalizedPath = pathname.replace(/\/$/, "") || "/";
   const aboutExact = normalizedPath === "/about-davinci";
@@ -146,7 +146,7 @@ export function Navbar() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="block px-4 py-2.5 text-sm text-foreground/85 transition-colors hover:bg-black/[0.03] hover:text-foreground"
+                        className="text-body block px-4 py-2.5 text-foreground/85 transition-colors hover:bg-black/[0.03] hover:text-foreground"
                       >
                         {submenuLabel(t.properties, item.href, item.label)}
                       </Link>
@@ -177,7 +177,7 @@ export function Navbar() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="block px-4 py-2.5 text-sm text-foreground/85 transition-colors hover:bg-black/[0.03] hover:text-foreground"
+                        className="text-body block px-4 py-2.5 text-foreground/85 transition-colors hover:bg-black/[0.03] hover:text-foreground"
                       >
                         {submenuLabel(t.serviceItems, item.href, item.label)}
                       </Link>
@@ -240,12 +240,12 @@ export function Navbar() {
           aria-modal="true"
         >
           <div className="mx-auto max-w-7xl space-y-1 px-4 py-4">
-            <Link href="/" className="block rounded-md px-3 py-3 text-base font-medium" onClick={closeMobile}>
+            <Link href="/" className="text-body block rounded-md px-3 py-3 font-medium" onClick={closeMobile}>
               {t.home}
             </Link>
             <button
               type="button"
-              className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-base font-medium"
+              className="text-body flex w-full items-center justify-between rounded-md px-3 py-3 text-left font-medium"
               onClick={() => setMobilePropsOpen((v) => !v)}
             >
               {t.ourProperties}
@@ -257,7 +257,7 @@ export function Navbar() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="block py-2 text-sm text-foreground/85"
+                      className="text-body block py-2 text-foreground/85"
                       onClick={closeMobile}
                     >
                       {submenuLabel(t.properties, item.href, item.label)}
@@ -268,7 +268,7 @@ export function Navbar() {
             )}
             <button
               type="button"
-              className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-base font-medium"
+              className="text-body flex w-full items-center justify-between rounded-md px-3 py-3 text-left font-medium"
               onClick={() => setMobileServicesOpen((v) => !v)}
             >
               {t.services}
@@ -280,7 +280,7 @@ export function Navbar() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="block py-2 text-sm text-foreground/85"
+                      className="text-body block py-2 text-foreground/85"
                       onClick={closeMobile}
                     >
                       {submenuLabel(t.serviceItems, item.href, item.label)}
@@ -291,12 +291,12 @@ export function Navbar() {
             )}
             <Link
               href="/about-davinci/"
-              className="block rounded-md px-3 py-3 text-base font-medium"
+              className="text-body block rounded-md px-3 py-3 font-medium"
               onClick={closeMobile}
             >
               {t.about}
             </Link>
-            <Link href="/contact/" className="block rounded-md px-3 py-3 text-base font-medium" onClick={closeMobile}>
+            <Link href="/contact/" className="text-body block rounded-md px-3 py-3 font-medium" onClick={closeMobile}>
               {t.contact}
             </Link>
           </div>

@@ -38,7 +38,7 @@ export function SignatureCommunitiesSection() {
     >
       <div className="mx-auto max-w-[90rem] px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24 xl:px-12">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[0.8rem] font-medium uppercase tracking-[0.35em] text-accent-on-dark sm:text-[0.9rem]">
+          <p className="text-body font-medium uppercase tracking-[0.35em] text-accent-on-dark">
             {h.signatureCommunitiesKicker}
           </p>
           <h2
@@ -47,7 +47,7 @@ export function SignatureCommunitiesSection() {
           >
             {h.signatureCommunitiesHeading}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-zinc-400 sm:text-lg">
+          <p className="text-body mt-4 text-zinc-400">
             {h.signatureCommunitiesBody}
           </p>
         </div>
@@ -80,9 +80,9 @@ export function SignatureCommunitiesSection() {
                   aria-hidden
                 />
                 <div className="relative mt-auto flex w-full items-end justify-between gap-3 p-5 sm:p-6">
-                  <span className="text-base font-light text-white sm:text-lg">{item.name}</span>
+                  <span className="text-body font-light text-white">{item.name}</span>
                   <span
-                    className="mb-1 shrink-0 text-lg text-accent-on-dark opacity-0 transition duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+                    className="text-body mb-1 shrink-0 text-accent-on-dark opacity-0 transition duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
                     aria-hidden
                   >
                     →

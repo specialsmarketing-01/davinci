@@ -42,9 +42,11 @@ export function AboutDavinciSplitSection() {
                 >
                   {h.aboutHeading}
                 </h2>
-                <p className="mt-3 max-w-full text-[10px] font-normal uppercase leading-[1.65] tracking-[0.08em] text-white/95 sm:mt-4 sm:text-[11px] md:text-xs md:leading-[1.7]">
-                  {h.aboutBody}
-                </p>
+                <div className="text-body mt-4 max-w-full space-y-4 text-zinc-400 sm:mt-5">
+                  {h.aboutBody.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

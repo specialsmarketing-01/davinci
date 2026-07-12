@@ -28,10 +28,10 @@ export function JourneyStagePillarsSection() {
                 </span>
                 <div className="h-px min-w-0 flex-1 max-w-[7rem] bg-zinc-700" aria-hidden />
               </div>
-              <h3 className="mt-5 text-[11px] font-normal uppercase tracking-[0.2em] text-accent sm:text-xs">
+              <h3 className="text-body mt-5 font-normal uppercase tracking-[0.2em] text-accent">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-500">{item.body}</p>
+              <p className="text-body mt-3 text-zinc-500">{item.body}</p>
             </div>
           ))}
         </div>
