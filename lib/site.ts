@@ -40,3 +40,10 @@ export const contact = {
     lines: ["Mon - Fri:", "10 AM - 6 PM"] as const,
   },
 };
+
+/** Official social profiles — update here to change footer icons sitewide. */
+export const socialLinks = {
+  telegramHref: "https://t.me/+971527729114",
+  instagramHref: "https://www.instagram.com/davinci_properties/",
+  facebookHref: "https://www.facebook.com/davinci.properties/",
+} as const;

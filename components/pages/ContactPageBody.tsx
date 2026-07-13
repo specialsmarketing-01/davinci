@@ -71,7 +71,7 @@ export function ContactPageBody() {
             </div>
           </address>
 
-          <div>
+          <div id="contact-form">
             <ContactForm />
           </div>
         </div>

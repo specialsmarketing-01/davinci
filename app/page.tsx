@@ -36,7 +36,9 @@ export default function HomePage() {
       <GoldenVisaHomeSection />
       <PartnerLogosSection />
       <AboutDavinciSplitSection />
-      <OfficeMapSection />
+      <div className="hidden lg:block">
+        <OfficeMapSection />
+      </div>
       </main>
     </>
   );
