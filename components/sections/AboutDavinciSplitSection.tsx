@@ -17,7 +17,7 @@ export function AboutDavinciSplitSection() {
             <div className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
               <h2
                 id="about-davinci-split-heading"
-                className="text-2xl font-light leading-snug tracking-tight text-white sm:text-[1.65rem] md:text-3xl"
+                className="text-[1.65rem] font-light leading-snug tracking-tight text-white sm:text-[1.65rem] md:text-3xl"
               >
                 {h.aboutHeading}
               </h2>

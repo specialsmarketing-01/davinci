@@ -14,7 +14,7 @@ export function PartnerLogosSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
           id="partners-heading"
-          className="text-center text-3xl font-light tracking-tight text-foreground sm:text-4xl lg:text-5xl"
+          className="text-center text-[2.0625rem] font-light tracking-tight text-foreground sm:text-4xl lg:text-5xl"
         >
           {site.home.partnersHeading}
         </h2>
