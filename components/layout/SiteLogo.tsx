@@ -26,7 +26,7 @@ export function SiteLogo({ forDarkBackground = false, className, imageClassName,
         height={130}
         priority
         className={cn(
-          "h-[3.22rem] w-auto sm:h-[3.62rem]",
+          "h-[3.54rem] w-auto sm:h-[3.98rem]",
           forDarkBackground && "brightness-0 invert",
           imageClassName,
         )}

@@ -40,7 +40,7 @@ export function PartnerLogosSection() {
                 {partnerLogos.map((partner) => (
                   <div
                     key={`${copy}-${partner.name}`}
-                    className="relative h-[3.16rem] w-[29.7vw] max-w-[7.59rem] shrink-0 sm:h-[4.025rem] sm:w-[11.5rem] sm:max-w-none md:h-[4.6rem] md:w-[12.65rem]"
+                    className="relative h-[3.634rem] w-[34.2vw] max-w-[8.73rem] shrink-0 sm:h-[4.025rem] sm:w-[11.5rem] sm:max-w-none md:h-[4.6rem] md:w-[12.65rem]"
                   >
                     <Image
                       src={partner.src}

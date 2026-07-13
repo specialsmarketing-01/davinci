@@ -1,11 +1,6 @@
 "use client";
 
 import { useNavLocale } from "@/components/providers/LocaleProvider";
-import Image from "next/image";
-
-const ABOUT_IMAGE_WIDTH = 1024;
-const ABOUT_IMAGE_HEIGHT = 682;
-const ABOUT_IMAGE_SRC = "/about-dubai-night.png?v=3";
 
 export function AboutDavinciSplitSection() {
   const { site } = useNavLocale();
@@ -18,35 +13,18 @@ export function AboutDavinciSplitSection() {
     >
       <div className="mx-auto w-full max-w-[1920px] px-6 sm:px-12 md:px-16 lg:px-24 xl:px-32 2xl:px-44">
         <div className="mx-auto w-full max-w-[72rem] rounded-sm lg:max-w-[80rem] shadow-[0_28px_56px_-8px_rgba(0,0,0,0.55),0_12px_28px_-6px_rgba(0,0,0,0.35)]">
-          <div className="grid grid-cols-1 overflow-hidden rounded-sm bg-[#020101f0] lg:grid-cols-2 lg:grid-rows-1 lg:min-h-[min(52vh,560px)]">
-            <div className="relative min-h-[220px] w-full self-stretch bg-[#020101f0] py-6 sm:min-h-[260px] sm:py-8 lg:h-full lg:min-h-0 lg:py-0">
-              <div className="absolute inset-2 flex items-center justify-center sm:inset-3 lg:inset-2">
-                <Image
-                  src={ABOUT_IMAGE_SRC}
-                  alt={site.aboutPage.imageAlt}
-                  width={ABOUT_IMAGE_WIDTH}
-                  height={ABOUT_IMAGE_HEIGHT}
-                  className="max-h-full w-auto max-w-full object-contain object-center"
-                  sizes="(max-width: 1024px) 100vw, 720px"
-                  priority={false}
-                  unoptimized
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center bg-[#020101f0] px-8 py-12 sm:px-12 sm:py-14 lg:min-h-0 lg:px-10 lg:py-12 xl:px-12 xl:py-12">
-              <div className="mx-auto flex w-full max-w-md flex-col items-center text-center sm:max-w-lg lg:max-w-xl">
-                <h2
-                  id="about-davinci-split-heading"
-                  className="text-2xl font-light leading-snug tracking-tight text-white sm:text-[1.65rem] md:text-3xl"
-                >
-                  {h.aboutHeading}
-                </h2>
-                <div className="text-body mt-4 max-w-full space-y-4 text-zinc-400 sm:mt-5">
-                  {h.aboutBody.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </div>
+          <div className="overflow-hidden rounded-sm bg-[#020101f0] px-8 py-12 sm:px-12 sm:py-14 lg:px-16 lg:py-16 xl:px-20">
+            <div className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
+              <h2
+                id="about-davinci-split-heading"
+                className="text-2xl font-light leading-snug tracking-tight text-white sm:text-[1.65rem] md:text-3xl"
+              >
+                {h.aboutHeading}
+              </h2>
+              <div className="text-body mt-4 max-w-full space-y-4 text-zinc-400 sm:mt-5">
+                {h.aboutBody.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
             </div>
           </div>
